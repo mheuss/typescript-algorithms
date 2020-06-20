@@ -5,14 +5,23 @@ exports[`Undirected Adjacency Graph Unit tests Add edges Should throw if we try 
 exports[`Undirected Adjacency Graph Unit tests Removal Should remove a vertex 1`] = `
 Object {
   "Point B": Object {
-    "Point C": false,
-    "Point D": false,
+    "edges": Object {
+      "Point C": false,
+      "Point D": false,
+    },
+    "payload": true,
   },
   "Point C": Object {
-    "Point B": true,
+    "edges": Object {
+      "Point B": true,
+    },
+    "payload": false,
   },
   "Point D": Object {
-    "Point B": true,
+    "edges": Object {
+      "Point B": true,
+    },
+    "payload": false,
   },
 }
 `;
@@ -20,18 +29,30 @@ Object {
 exports[`Undirected Adjacency Graph Unit tests Removal should remove an edge 1`] = `
 Object {
   "Point A": Object {
-    "Point C": false,
+    "edges": Object {
+      "Point C": false,
+    },
+    "payload": true,
   },
   "Point B": Object {
-    "Point C": false,
-    "Point D": false,
+    "edges": Object {
+      "Point C": false,
+      "Point D": false,
+    },
+    "payload": true,
   },
   "Point C": Object {
-    "Point A": true,
-    "Point B": true,
+    "edges": Object {
+      "Point A": true,
+      "Point B": true,
+    },
+    "payload": false,
   },
   "Point D": Object {
-    "Point B": true,
+    "edges": Object {
+      "Point B": true,
+    },
+    "payload": false,
   },
 }
 `;

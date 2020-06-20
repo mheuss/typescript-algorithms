@@ -1,42 +1,23 @@
 // Adjacency List - stores data in a list, indexed by the node
-import { cloneDeep } from 'lodash';
-import { ErrorCodes } from '../../constants';
-import { IAdjacencyList, IEdge, IVertex } from './types';
+import {ErrorCodes} from "../../constants";
+import {IEdgeParameter, IVertices} from './types';
 
-export class UndirectedAdjacencyListGraph<VertexData, EdgeData> {
-  protected adjacencyList: IAdjacencyList<EdgeData>;
-  protected vertexPayload: IVertex<VertexData>;
+export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
+  protected vertices: IVertices<VertexPayload, EdgePayload>;
 
   constructor() {
-    this.adjacencyList = {};
-    this.vertexPayload = {};
+    this.vertices = {};
   }
 
-  public addVertex = (name: string, payload?: VertexData) => {
-    if (!this.adjacencyList[name]) {
-      this.adjacencyList[name] = {};
-    }
-    if (payload) {
-      this.vertexPayload[name] = payload;
-    }
-  };
-
-  public removeVertex = (name: string) => {
-    if (this.adjacencyList[name]) {
-      const keys = Object.keys(this.adjacencyList[name]);
-      keys.forEach((vertex: string) => {
-        this.removeEdge(name, vertex);
-      });
-
-      delete this.vertexPayload[name];
-      delete this.adjacencyList[name];
-    }
-  };
-
-  public addEdge = (vertexOne: IEdge<EdgeData>, vertexTwo: IEdge<EdgeData>) => {
+  /**
+   * Adds an edge to the graph between two vertices
+   * @param vertexOne
+   * @param vertexTwo
+   */
+  public addEdge = (vertexOne: IEdgeParameter<EdgePayload>, vertexTwo: IEdgeParameter<EdgePayload>) => {
     if (
-      this.adjacencyList[vertexTwo.name] === undefined ||
-      this.adjacencyList[vertexTwo.name] === undefined
+      this.vertices[vertexTwo.name] === undefined ||
+      this.vertices[vertexTwo.name] === undefined
     ) {
       throw {
         code: ErrorCodes.OPERATION_BEYOND_BOUNDS,
@@ -45,45 +26,73 @@ export class UndirectedAdjacencyListGraph<VertexData, EdgeData> {
     }
 
     if (
-      this.adjacencyList[vertexOne.name] &&
-      !this.adjacencyList[vertexOne.name][vertexTwo.name] !== undefined &&
+      this.vertices[vertexOne.name] &&
+      !this.vertices[vertexOne.name].edges[vertexTwo.name] !== undefined &&
       vertexOne.payload !== undefined
     ) {
-      this.adjacencyList[vertexOne.name][vertexTwo.name] = vertexOne.payload;
+      this.vertices[vertexOne.name].edges[vertexTwo.name] = vertexOne.payload;
     }
 
     if (
-      this.adjacencyList[vertexTwo.name] &&
-      !this.adjacencyList[vertexTwo.name][vertexOne.name] !== undefined &&
+      this.vertices[vertexTwo.name] &&
+      !this.vertices[vertexTwo.name].edges[vertexOne.name] !== undefined &&
       vertexTwo.payload !== undefined
     ) {
-      this.adjacencyList[vertexTwo.name][vertexOne.name] = vertexTwo.payload;
+      this.vertices[vertexTwo.name].edges[vertexOne.name] = vertexTwo.payload;
     }
   };
 
+  /**
+   * Adds a vertex
+   * @param name
+   * @param payload
+   */
+  public addVertex = (name: string, payload?: VertexPayload) => {
+    if (!this.vertices[name]) {
+      this.vertices[name] = { edges: {}, payload};
+    }
+  };
+
+  /**
+   * Returns the object containing the vertex and edge data
+   */
+  public getAdjacencyList = () => {
+    return {...this.vertices};
+  };
+
+  /**
+   * Remove an edge between two vertices
+   * @param vertexOneName
+   * @param vertexTwoName
+   */
   public removeEdge = (vertexOneName: string, vertexTwoName: string) => {
     if (
-      this.adjacencyList[vertexOneName] &&
-      !this.adjacencyList[vertexOneName][vertexTwoName] !== undefined
+      this.vertices[vertexOneName] &&
+      !this.vertices[vertexOneName].edges[vertexTwoName] !== undefined
     ) {
-      delete this.adjacencyList[vertexOneName][vertexTwoName];
+      delete this.vertices[vertexOneName].edges[vertexTwoName];
     }
 
     if (
-      this.adjacencyList[vertexTwoName] &&
-      !this.adjacencyList[vertexTwoName][vertexOneName] !== undefined
+      this.vertices[vertexTwoName] &&
+      !this.vertices[vertexTwoName].edges[vertexOneName] !== undefined
     ) {
-      delete this.adjacencyList[vertexTwoName][vertexOneName];
+      delete this.vertices[vertexTwoName].edges[vertexOneName];
     }
   };
 
-  public getAdjacencyList = () => {
-    return { ...this.adjacencyList };
-  };
+  /**
+   * Removes a vertex.
+   * @param name
+   */
+  public removeVertex = (name: string) => {
+    if (this.vertices[name]) {
+      const keys = Object.keys(this.vertices[name].edges);
+      keys.forEach((vertex: string) => {
+        this.removeEdge(name, vertex);
+      });
 
-  public getVertexData = (name: string) => {
-    return this.vertexPayload[name] === undefined
-      ? undefined
-      : cloneDeep(this.vertexPayload[name]);
+      delete this.vertices[name];
+    }
   };
 }

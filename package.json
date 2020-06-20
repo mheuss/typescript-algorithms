@@ -10,7 +10,14 @@
     "url": ""
   },
   "keywords": [
-    "Algorithms", "Stacks", "Heaps", "Queues", "Sorts", "Diffing", "Linked Lists", "Trees"
+    "Algorithms",
+    "Stacks",
+    "Heaps",
+    "Queues",
+    "Sorts",
+    "Diffing",
+    "Linked Lists",
+    "Trees"
   ],
   "files": [
     "lib"
@@ -22,7 +29,7 @@
     "docs": "typedoc --excludeProtected --excludePrivate --excludeNotExported --mode file --exclude \"**/**+(.spec).ts\" --exclude \"**/mock**\" --out docs src",
     "format": "prettier --write \"{src,__tests__}/**/*.ts\" --single-quote --trailing-comma es5",
     "lint": "tslint --fix --format verbose \"src/**/*.ts\"",
-    "precommit": "yarn clean && yarn format && yarn lint && yarn build && yarn docs",
+    "prepush": "yarn clean && yarn format && yarn lint && yarn test",
     "build": "tsc --pretty",
     "test": "jest",
     "coverage": "jest --coverage",
@@ -40,6 +47,7 @@
     "@types/node": "^10.11.4",
     "@types/object-hash": "^1.3.3",
     "coveralls": "^3.0.2",
+    "husky": "^4.2.5",
     "jest": "^23.6.0",
     "prettier": "^1.14.3",
     "rimraf": "^2.6.2",
@@ -51,6 +59,11 @@
   },
   "engines": {
     "node": ">=10.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn prepush"
+    }
   },
   "jest": {
     "preset": "ts-jest"

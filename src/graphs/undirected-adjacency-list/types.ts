@@ -1,16 +1,17 @@
-export interface IEdges<EdgeGeneric> {
-  [key: string]: EdgeGeneric;
-}
-
-export interface IAdjacencyList<EdgeGeneric> {
-  [key: string]: IEdges<EdgeGeneric>;
-}
-
-export interface IEdge<EdgeGeneric> {
+export interface IEdgeParameter<EdgeGeneric> {
   name: string;
   payload?: EdgeGeneric;
 }
 
-export interface IVertex<VertexGeneric> {
-  [key: string]: VertexGeneric;
+export interface IVertices<VertexGeneric, EdgeGeneric> {
+  [key: string]: IVertex<VertexGeneric, EdgeGeneric>;
+}
+
+export interface IVertex<VertexGeneric, EdgeGeneric> {
+  edges: IEdges<EdgeGeneric>;
+  payload?: VertexGeneric;
+}
+
+export interface IEdges<EdgeGeneric> {
+  [key: string]: EdgeGeneric;
 }

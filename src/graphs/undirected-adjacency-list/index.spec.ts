@@ -1,11 +1,10 @@
-import { UndirectedAdjacencyListGraph } from './index';
+import {UndirectedAdjacencyListGraph} from './index';
 
 describe('Undirected Adjacency Graph Unit tests', () => {
   it('Should add a vertex when asked', () => {
     const graph = new UndirectedAdjacencyListGraph<string, boolean>();
     graph.addVertex('New Vertex', 'Molly Coddle');
-    expect(graph.getAdjacencyList()).toEqual({ 'New Vertex': {} });
-    expect(graph.getVertexData('New Vertex')).toEqual('Molly Coddle');
+    expect(graph.getAdjacencyList()).toEqual({"New Vertex": {"edges": {}, "payload": "Molly Coddle"}});
   });
 
   describe('Add edges', () => {
@@ -14,12 +13,12 @@ describe('Undirected Adjacency Graph Unit tests', () => {
       graph.addVertex('Point A', true);
       graph.addVertex('Point B', false);
       graph.addEdge(
-        { name: 'Point A', payload: true },
-        { name: 'Point B', payload: false }
+        {name: 'Point A', payload: true},
+        {name: 'Point B', payload: false}
       );
       expect(graph.getAdjacencyList()).toEqual({
-        'Point A': { 'Point B': true },
-        'Point B': { 'Point A': false },
+        "Point A": {"edges": {"Point B": true}, "payload": true},
+        "Point B": {"edges": {"Point A": false}, "payload": false}
       });
     });
 
@@ -30,8 +29,8 @@ describe('Undirected Adjacency Graph Unit tests', () => {
 
       expect(() =>
         graph.addEdge(
-          { name: 'Point A', payload: true },
-          { name: 'Point C', payload: true }
+          {name: 'Point A', payload: true},
+          {name: 'Point C', payload: true}
         )
       ).toThrowErrorMatchingSnapshot();
     });
@@ -88,7 +87,6 @@ describe('Undirected Adjacency Graph Unit tests', () => {
     it('Should remove a vertex', () => {
       graph.removeVertex('Point A');
       expect(graph.getAdjacencyList()).toMatchSnapshot();
-      expect(graph.getVertexData('Point A')).toBeUndefined();
     });
   });
 });
