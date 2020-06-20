@@ -1,6 +1,6 @@
 // Adjacency List - stores data in a list, indexed by the node
-import {ErrorCodes} from "../../constants";
-import {IEdgeParameter, IVertices} from './types';
+import { ErrorCodes } from '../../constants';
+import { IEdgeParameter, IVertices } from './types';
 
 export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
   protected vertices: IVertices<VertexPayload, EdgePayload>;
@@ -14,7 +14,10 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
    * @param vertexOne
    * @param vertexTwo
    */
-  public addEdge = (vertexOne: IEdgeParameter<EdgePayload>, vertexTwo: IEdgeParameter<EdgePayload>) => {
+  public addEdge = (
+    vertexOne: IEdgeParameter<EdgePayload>,
+    vertexTwo: IEdgeParameter<EdgePayload>
+  ) => {
     if (
       this.vertices[vertexTwo.name] === undefined ||
       this.vertices[vertexTwo.name] === undefined
@@ -49,7 +52,7 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
    */
   public addVertex = (name: string, payload?: VertexPayload) => {
     if (!this.vertices[name]) {
-      this.vertices[name] = { edges: {}, payload};
+      this.vertices[name] = { edges: {}, payload };
     }
   };
 
@@ -57,7 +60,7 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
    * Returns the object containing the vertex and edge data
    */
   public getAdjacencyList = () => {
-    return {...this.vertices};
+    return { ...this.vertices };
   };
 
   /**
