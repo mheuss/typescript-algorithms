@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Binary Search Tree Unit tests NUmberic Tests Insert Tests Snapshot 1`] = `
+Node {
+  "children": Array [
+    Node {
+      "children": Array [],
+      "parent": [Circular],
+      "value": 2,
+    },
+    Node {
+      "children": Array [
+        undefined,
+        Node {
+          "children": Array [
+            undefined,
+            Node {
+              "children": Array [
+                Node {
+                  "children": Array [],
+                  "parent": [Circular],
+                  "value": 17,
+                },
+              ],
+              "parent": [Circular],
+              "value": 35,
+            },
+          ],
+          "parent": [Circular],
+          "value": 15,
+        },
+      ],
+      "parent": [Circular],
+      "value": 4,
+    },
+  ],
+  "parent": null,
+  "value": 3,
+}
+`;
+
+exports[`Binary Search Tree Unit tests Test with strings Insert Tests Snapshot 1`] = `
+Node {
+  "children": Array [
+    Node {
+      "children": Array [],
+      "parent": [Circular],
+      "value": "Bravo",
+    },
+    Node {
+      "children": Array [
+        undefined,
+        Node {
+          "children": Array [
+            undefined,
+            Node {
+              "children": Array [
+                Node {
+                  "children": Array [],
+                  "parent": [Circular],
+                  "value": "Papa",
+                },
+              ],
+              "parent": [Circular],
+              "value": "Zulu",
+            },
+          ],
+          "parent": [Circular],
+          "value": "Oscar",
+        },
+      ],
+      "parent": [Circular],
+      "value": "Nancy",
+    },
+  ],
+  "parent": null,
+  "value": "Mike",
+}
+`;

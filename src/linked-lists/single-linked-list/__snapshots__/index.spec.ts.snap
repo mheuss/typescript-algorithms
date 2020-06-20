@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Single Linked List Unit Tests Insert Should insert a node at the end 1`] = `
+Array [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+]
+`;
+
+exports[`Single Linked List Unit Tests Insert Should insert a node in the beginning if the list length was zero 1`] = `
+Array [
+  6,
+]
+`;
+
+exports[`Single Linked List Unit Tests Insert Should insert a node in the middle 1`] = `
+Array [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+]
+`;
+
+exports[`Single Linked List Unit Tests Push Array Should allow us to chain 1`] = `
+ListNode {
+  "next": ListNode {
+    "next": ListNode {
+      "next": ListNode {
+        "next": ListNode {
+          "next": ListNode {
+            "next": ListNode {
+              "next": ListNode {
+                "next": ListNode {
+                  "next": ListNode {
+                    "next": ListNode {
+                      "next": ListNode {
+                        "next": ListNode {
+                          "next": ListNode {
+                            "next": null,
+                            "payload": 14,
+                          },
+                          "payload": 13,
+                        },
+                        "payload": 12,
+                      },
+                      "payload": 11,
+                    },
+                    "payload": 10,
+                  },
+                  "payload": 9,
+                },
+                "payload": 8,
+              },
+              "payload": 7,
+            },
+            "payload": 6,
+          },
+          "payload": 5,
+        },
+        "payload": 4,
+      },
+      "payload": 3,
+    },
+    "payload": 2,
+  },
+  "payload": 1,
+}
+`;
+
+exports[`Single Linked List Unit Tests Push Array Should allow us to push an array into an empty list 1`] = `
+ListNode {
+  "next": ListNode {
+    "next": ListNode {
+      "next": ListNode {
+        "next": ListNode {
+          "next": ListNode {
+            "next": ListNode {
+              "next": null,
+              "payload": 7,
+            },
+            "payload": 6,
+          },
+          "payload": 5,
+        },
+        "payload": 4,
+      },
+      "payload": 3,
+    },
+    "payload": 2,
+  },
+  "payload": 1,
+}
+`;
+
+exports[`Single Linked List Unit Tests Push Array Should allow us to push an array to the end of an existing list 1`] = `
+ListNode {
+  "next": ListNode {
+    "next": ListNode {
+      "next": ListNode {
+        "next": ListNode {
+          "next": ListNode {
+            "next": ListNode {
+              "next": ListNode {
+                "next": ListNode {
+                  "next": ListNode {
+                    "next": null,
+                    "payload": 10,
+                  },
+                  "payload": 9,
+                },
+                "payload": 8,
+              },
+              "payload": 7,
+            },
+            "payload": 6,
+          },
+          "payload": 5,
+        },
+        "payload": 4,
+      },
+      "payload": 3,
+    },
+    "payload": 2,
+  },
+  "payload": 1,
+}
+`;
+
+exports[`Single Linked List Unit Tests Push Should allow an item to be pushed onto a list with a preexisting item 1`] = `
+ListNode {
+  "next": ListNode {
+    "next": null,
+    "payload": "Second Item",
+  },
+  "payload": "First Item",
+}
+`;
+
+exports[`Single Linked List Unit Tests Push Should allow an item to be pushed onto an empty list 1`] = `
+ListNode {
+  "next": null,
+  "payload": "First Item",
+}
+`;
+
+exports[`Single Linked List Unit Tests Push Take advantage of the returned list to push multiple items 1`] = `
+ListNode {
+  "next": ListNode {
+    "next": ListNode {
+      "next": ListNode {
+        "next": null,
+        "payload": "Fourth Item",
+      },
+      "payload": "Third Item",
+    },
+    "payload": "Second Item",
+  },
+  "payload": "First Item",
+}
+`;

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List Node unit test Should allow for creation of numerous node items 1`] = `
+DoublyLinkedNode {
+  "next": DoublyLinkedNode {
+    "next": null,
+    "payload": 15,
+    "previous": [Circular],
+  },
+  "payload": 5,
+  "previous": null,
+}
+`;
+
+exports[`List Node unit test Should allow for creation of numerous node items 2`] = `
+DoublyLinkedNode {
+  "next": null,
+  "payload": 15,
+  "previous": DoublyLinkedNode {
+    "next": [Circular],
+    "payload": 5,
+    "previous": null,
+  },
+}
+`;

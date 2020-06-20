@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List Node unit test Should allow for creation of numerous node items 1`] = `
+ListNode {
+  "next": ListNode {
+    "next": null,
+    "payload": 15,
+  },
+  "payload": 5,
+}
+`;
+
+exports[`List Node unit test Should allow for creation of numerous node items 2`] = `
+ListNode {
+  "next": null,
+  "payload": 15,
+}
+`;

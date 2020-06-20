@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Selection sort Should be able to sort strings in correct order 1`] = `
+Array [
+  "Constance",
+  "Lauren",
+  "Michael",
+  "Mikey",
+  "not a first name",
+  "note",
+]
+`;
+
+exports[`Selection sort Should be able to support an array of objects using a custom sort - this is sorting by last name in reverse order 1`] = `
+Array [
+  Object {
+    "firstName": "John",
+    "lastName": "Smith",
+  },
+  Object {
+    "firstName": "Matt",
+    "lastName": "Saben",
+  },
+  Object {
+    "firstName": "Mark",
+    "lastName": "LaCroix",
+  },
+  Object {
+    "firstName": "Mike",
+    "lastName": "Heuss",
+  },
+  Object {
+    "firstName": "Peggy",
+    "lastName": "Arnold",
+  },
+]
+`;
+
+exports[`Selection sort Should sort an array of numbers quite readily 1`] = `
+Array [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+]
+`;

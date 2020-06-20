@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test of Double Linked List Insert Should insert a node at the end 1`] = `
+Array [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+]
+`;
+
+exports[`Test of Double Linked List Insert Should insert a node in the beginning if the list length was zero 1`] = `
+Array [
+  6,
+]
+`;
+
+exports[`Test of Double Linked List Insert Should insert a node in the middle 1`] = `
+Array [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+]
+`;
+
+exports[`Test of Double Linked List Test of Push Should add to list 1`] = `
+DoublyLinkedNode {
+  "next": null,
+  "payload": 1,
+  "previous": null,
+}
+`;
+
+exports[`Test of Double Linked List Test of Push Should add to list 2`] = `
+DoublyLinkedNode {
+  "next": DoublyLinkedNode {
+    "next": DoublyLinkedNode {
+      "next": null,
+      "payload": 3,
+      "previous": [Circular],
+    },
+    "payload": 2,
+    "previous": [Circular],
+  },
+  "payload": 1,
+  "previous": null,
+}
+`;
+
+exports[`Test of Double Linked List Test of Push Should push an array 1`] = `
+DoublyLinkedNode {
+  "next": DoublyLinkedNode {
+    "next": DoublyLinkedNode {
+      "next": DoublyLinkedNode {
+        "next": DoublyLinkedNode {
+          "next": DoublyLinkedNode {
+            "next": DoublyLinkedNode {
+              "next": DoublyLinkedNode {
+                "next": null,
+                "payload": 8,
+                "previous": [Circular],
+              },
+              "payload": 7,
+              "previous": [Circular],
+            },
+            "payload": 6,
+            "previous": [Circular],
+          },
+          "payload": 5,
+          "previous": [Circular],
+        },
+        "payload": 4,
+        "previous": [Circular],
+      },
+      "payload": 3,
+      "previous": [Circular],
+    },
+    "payload": 2,
+    "previous": [Circular],
+  },
+  "payload": 1,
+  "previous": null,
+}
+`;

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Merge Sort tests Should properly sort a list of strings 1`] = `
+Array [
+  "artichoke",
+  "banana",
+  "celery",
+  "eggplant",
+  "Kiwi",
+  "pineapple",
+]
+`;
+
+exports[`Merge Sort tests Should properly sort objects in reverse order 1`] = `
+Array [
+  Object {
+    "firstName": "John",
+    "lastName": "Smith",
+  },
+  Object {
+    "firstName": "Matt",
+    "lastName": "Saben",
+  },
+  Object {
+    "firstName": "Mark",
+    "lastName": "LaCroix",
+  },
+  Object {
+    "firstName": "Mike",
+    "lastName": "Heuss",
+  },
+  Object {
+    "firstName": "Peggy",
+    "lastName": "Arnold",
+  },
+]
+`;

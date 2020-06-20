@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Undo/Redo Stack Tests Place items into undo Should allow us to place items into the undo stack 1`] = `
+Array [
+  "Drink Alcohol",
+]
+`;
+
+exports[`Undo/Redo Stack Tests Undo Items in sequence By redoing, we should be populating the undo stack 1`] = `
+Array [
+  "Drink More",
+  "Drive Towards Home",
+  "Run into tree",
+]
+`;
+
+exports[`Undo/Redo Stack Tests Undo Items in sequence By undoing, we should be populating the redo stack 1`] = `
+Array [
+  "Drink Alcohol",
+  "Sing Loudly",
+  "Dance With Abandon",
+  "Drink More",
+  "Drive Towards Home",
+  "Run into tree",
+]
+`;
+
+exports[`Undo/Redo Stack Tests Undo Items in sequence Should allow us to place items into the undo stack 1`] = `
+Array [
+  "Run into tree",
+  "Drive Towards Home",
+  "Drink More",
+  "Dance With Abandon",
+  "Sing Loudly",
+  "Drink Alcohol",
+]
+`;

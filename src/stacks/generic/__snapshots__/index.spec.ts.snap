@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test of Generic Stack Should be able to export an array and load it back in with the same order 1`] = `
+Array [
+  7,
+  6,
+  5,
+  4,
+  3,
+  2,
+  1,
+]
+`;
+
+exports[`Test of Generic Stack Should be able to export an array and load it back in with the same order 2`] = `
+SingleLinkedList {
+  "empty": [Function],
+  "findAll": [Function],
+  "findFirst": [Function],
+  "get": [Function],
+  "getLength": [Function],
+  "getNode": [Function],
+  "head": ListNode {
+    "next": ListNode {
+      "next": ListNode {
+        "next": ListNode {
+          "next": ListNode {
+            "next": ListNode {
+              "next": ListNode {
+                "next": null,
+                "payload": 1,
+              },
+              "payload": 2,
+            },
+            "payload": 3,
+          },
+          "payload": 4,
+        },
+        "payload": 5,
+      },
+      "payload": 6,
+    },
+    "payload": 7,
+  },
+  "insert": [Function],
+  "length": 7,
+  "pop": [Function],
+  "push": [Function],
+  "pushArray": [Function],
+  "remove": [Function],
+  "reverse": [Function],
+  "set": [Function],
+  "shift": [Function],
+  "tail": ListNode {
+    "next": null,
+    "payload": 1,
+  },
+  "toArray": [Function],
+  "unshift": [Function],
+}
+`;
+
+exports[`Test of Generic Stack Should be able to push items on it 1`] = `
+Array [
+  7,
+  6,
+  5,
+  4,
+  3,
+  2,
+  1,
+]
+`;

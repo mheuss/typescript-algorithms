@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Undirected Adjacency Graph Unit tests Add edges Should throw if we try to add to a non existent vertex 1`] = `"One or both of these vertices don't exist Point A / Point C"`;
+
+exports[`Undirected Adjacency Graph Unit tests Removal Should remove a vertex 1`] = `
+Object {
+  "Point B": Object {
+    "Point C": false,
+    "Point D": false,
+  },
+  "Point C": Object {
+    "Point B": true,
+  },
+  "Point D": Object {
+    "Point B": true,
+  },
+}
+`;
+
+exports[`Undirected Adjacency Graph Unit tests Removal should remove an edge 1`] = `
+Object {
+  "Point A": Object {
+    "Point C": false,
+  },
+  "Point B": Object {
+    "Point C": false,
+    "Point D": false,
+  },
+  "Point C": Object {
+    "Point A": true,
+    "Point B": true,
+  },
+  "Point D": Object {
+    "Point B": true,
+  },
+}
+`;

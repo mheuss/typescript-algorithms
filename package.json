@@ -1,0 +1,58 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "algorithms",
+  "license": "MIT",
+  "repository": "",
+  "author": {
+    "name": "Michael Heuss",
+    "email": "6349935+mheuss@users.noreply.github.com",
+    "url": ""
+  },
+  "keywords": [
+    "Algorithms", "Stacks", "Heaps", "Queues", "Sorts", "Diffing", "Linked Lists", "Trees"
+  ],
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index",
+  "types": "lib/index",
+  "scripts": {
+    "clean": "rimraf lib && rimraf coverage && rimraf docs",
+    "docs": "typedoc --excludeProtected --excludePrivate --excludeNotExported --mode file --exclude \"**/**+(.spec).ts\" --exclude \"**/mock**\" --out docs src",
+    "format": "prettier --write \"{src,__tests__}/**/*.ts\" --single-quote --trailing-comma es5",
+    "lint": "tslint --fix --format verbose \"src/**/*.ts\"",
+    "precommit": "yarn clean && yarn format && yarn lint && yarn build && yarn docs",
+    "build": "tsc --pretty",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "watch": "yarn build -- --watch",
+    "watch:test": "jest --watch"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "object-hash": "^2.0.3",
+    "typedoc": "^0.17.7"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.3",
+    "@types/lodash": "^4.14.153",
+    "@types/node": "^10.11.4",
+    "@types/object-hash": "^1.3.3",
+    "coveralls": "^3.0.2",
+    "jest": "^23.6.0",
+    "prettier": "^1.14.3",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^23.10.3",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "typescript": "^3.1.1"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "jest": {
+    "preset": "ts-jest"
+  }
+}

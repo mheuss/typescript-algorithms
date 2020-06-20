@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Insertion sort Should be able to support an array of objects using a custom sort 1`] = `
+Array [
+  Object {
+    "firstName": "Peggy",
+    "lastName": "Arnold",
+  },
+  Object {
+    "firstName": "Mike",
+    "lastName": "Heuss",
+  },
+  Object {
+    "firstName": "Mark",
+    "lastName": "LaCroix",
+  },
+  Object {
+    "firstName": "Matt",
+    "lastName": "Saben",
+  },
+  Object {
+    "firstName": "John",
+    "lastName": "Smith",
+  },
+]
+`;
+
+exports[`Insertion sort Should sort an array of numbers quite readily 1`] = `
+Array [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+]
+`;
+
+exports[`Insertion sort Should tackle an array of strings 1`] = `
+Array [
+  "artichoke",
+  "banana",
+  "celery",
+  "eggplant",
+  "Kiwi",
+  "pineapple",
+]
+`;
