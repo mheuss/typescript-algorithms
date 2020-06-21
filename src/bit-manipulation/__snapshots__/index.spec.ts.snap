@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bitwise Manipulation Modulo Should throw if we try to get a modulo on an invalid value 1`] = `"We can't work with bit -95. Must be greater than 0, less than 31"`;
+
+exports[`Bitwise Manipulation Modulo Should throw if we try to get a modulo on an invalid value 2`] = `"We can't work with bit 0. Must be greater than 0, less than 31"`;
+
+exports[`Bitwise Manipulation Set a number of bits, right to left Should throw if we try to set a negative value 1`] = `"We can't work with bit -95. Must be between 0 and 31"`;
+
+exports[`Bitwise Manipulation Set a number of bits, right to left Should throw if we try to set too many 1`] = `"We can't work with bit 95. Must be between 0 and 31"`;
