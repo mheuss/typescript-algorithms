@@ -11,6 +11,7 @@ were sufficient.
 
 Included here are:
 
+  - Bit Manipulation
   - Graphs (Undirected Adjacency)
   - Heaps (Min, Max Binary and D*ry)
   - Linked Lists (Single and Double)
@@ -18,6 +19,7 @@ Included here are:
   - Queues (FIFO, Priority Min & Max)
   - Sorts (Bubble, Heap, Insertion, Merge, Quick, Radix, Selection)
   - Stacks (Generic, Undo/Redo)
+  - Three Way Object Merge
   - Trees (Binary Search Tree)
 
 One note - wherever appropriate, I've made use of **generic types**. More fun that way.

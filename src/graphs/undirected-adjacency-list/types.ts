@@ -15,3 +15,16 @@ export interface IVertex<VertexGeneric, EdgeGeneric> {
 export interface IEdges<EdgeGeneric> {
   [key: string]: EdgeGeneric;
 }
+
+export interface ITraversalPayload<VertexGeneric, EdgeGeneric> {
+  connectedVertexName?: string;
+  edge?: EdgeGeneric;
+  vertex: IVertex<VertexGeneric, EdgeGeneric>;
+  vertexName: string;
+}
+
+export type TraversalCallback<VertexGeneric, EdgeGeneric> = (vertexAndEdge: ITraversalPayload<VertexGeneric, EdgeGeneric>)=>void;
+
+export interface IVisitedVertex {
+  [key: string]: boolean;
+}

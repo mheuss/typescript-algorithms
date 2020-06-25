@@ -1,8 +1,8 @@
 import { ICompareByKey } from './type';
 
 /**
- * When given two objects, one original, one new, this class will tell you what was added to the original,
- * and what is added in the new.
+ * When given two different arrays of objects, one original, one new, this class will tell you what was
+ * added to the original,  and what is added in the new.
  * Has a generic that contains the interface of the object we are comparing.
  */
 export class CompareByKey<T> {

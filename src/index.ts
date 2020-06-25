@@ -1,5 +1,5 @@
-export * from './diff-objects/compareByKey';
-export * from './diff-objects/compareByKeyAndHash';
+export * from './objects/diff-objects/compareByKey';
+export * from './objects/diff-objects/compareByKeyAndHash';
 export * from './graphs/undirected-adjacency-list';
 export * from './heaps/max-binary-heap';
 export * from './heaps/min-binary-heap';

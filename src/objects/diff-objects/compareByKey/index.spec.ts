@@ -1,7 +1,7 @@
 import { cloneDeep } from 'lodash';
 import { newFile, originalFile } from '../mockData';
 import { IBankData } from '../mockTypes';
-import { CompareByKey } from './';
+import { CompareByKey } from './index';
 
 describe('compareByKey unit tests', () => {
   describe('Hash map creation test', () => {
