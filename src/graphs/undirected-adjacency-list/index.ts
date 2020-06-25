@@ -1,6 +1,12 @@
 // Adjacency List - stores data in a list, indexed by the node
 import { ErrorCodes } from '../../constants';
-import {IEdgeParameter, IVertex, IVertices, IVisitedVertex, TraversalCallback} from './types';
+import {
+  IEdgeParameter,
+  IVertex,
+  IVertices,
+  IVisitedVertex,
+  TraversalCallback,
+} from './types';
 
 export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
   protected vertices: IVertices<VertexPayload, EdgePayload>;
@@ -84,7 +90,6 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
     }
   };
 
-
   /**
    * Adds a vertex
    * @param name
@@ -139,25 +144,36 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
     }
   };
 
-  public depthFirstTraversal=(startingVertex: string, callback: TraversalCallback<VertexPayload, EdgePayload>)=>{
-    const visited: IVisitedVertex={};
-    if (
-      this.vertices[startingVertex] === undefined
-    ) {
-      throw {code: ErrorCodes.OPERATION_BEYOND_BOUNDS, message: "Invalid vertex passed in"};
+  public depthFirstTraversal = (
+    startingVertex: string,
+    callback: TraversalCallback<VertexPayload, EdgePayload>
+  ) => {
+    const visited: IVisitedVertex = {};
+    if (this.vertices[startingVertex] === undefined) {
+      throw {
+        code: ErrorCodes.OPERATION_BEYOND_BOUNDS,
+        message: 'Invalid vertex passed in',
+      };
     }
-      this.depthFirstTraversalHelper(this.vertices[startingVertex], startingVertex, callback, visited);
-  }
+    this.depthFirstTraversalHelper(
+      this.vertices[startingVertex],
+      startingVertex,
+      callback,
+      visited
+    );
+  };
 
-  private depthFirstTraversalHelper=(currentVertex: IVertex<VertexPayload, EdgePayload>,
-                                     vertexName: string,
-                                     callback: TraversalCallback<VertexPayload, EdgePayload>,
-                                     visited: IVisitedVertex)=>{
+  private depthFirstTraversalHelper = (
+    currentVertex: IVertex<VertexPayload, EdgePayload>,
+    vertexName: string,
+    callback: TraversalCallback<VertexPayload, EdgePayload>,
+    visited: IVisitedVertex
+  ) => {
     visited[vertexName] = true;
 
     // Look at all vertices - if we got none, leave
     const connectedVertices = Object.keys(currentVertex.edges);
-    if (connectedVertices.length===0) {
+    if (connectedVertices.length === 0) {
       callback({
         connectedVertexName: undefined,
         edge: undefined,
@@ -169,14 +185,14 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
 
     // Let's filter out the ones visited
     const unvisitedVertices: string[] = [];
-    connectedVertices.forEach((vertexKey: string)=>{
-      if (visited[vertexKey]===undefined) {
+    connectedVertices.forEach((vertexKey: string) => {
+      if (visited[vertexKey] === undefined) {
         unvisitedVertices.push(vertexKey);
       }
     });
 
     // If no unvisited remain, peace out
-    if (unvisitedVertices.length===0) {
+    if (unvisitedVertices.length === 0) {
       callback({
         connectedVertexName: undefined,
         edge: undefined,
@@ -186,8 +202,7 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
       return;
     }
 
-
-    unvisitedVertices.forEach((connectedVertexName)=>{
+    unvisitedVertices.forEach(connectedVertexName => {
       callback({
         connectedVertexName,
         edge: currentVertex.edges[connectedVertexName],
@@ -195,7 +210,12 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
         vertexName,
       });
 
-      this.depthFirstTraversalHelper(this.vertices[connectedVertexName], connectedVertexName, callback, visited);
+      this.depthFirstTraversalHelper(
+        this.vertices[connectedVertexName],
+        connectedVertexName,
+        callback,
+        visited
+      );
     });
-  }
+  };
 }

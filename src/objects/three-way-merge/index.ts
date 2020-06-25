@@ -1,4 +1,3 @@
-
 import {
   cloneDeep,
   isArray,
@@ -7,7 +6,7 @@ import {
   keys,
   omit,
   reduce,
-} from "lodash";
+} from 'lodash';
 
 interface IObjectMerge<T> {
   changedObject: T;
@@ -58,9 +57,11 @@ export function diffDeep(
     sourceObject,
     // The reducing function
     (resultingObject, currentValue, currentKey) => {
-
       // Recursively call `diffDeep` on objects, but not arrays
-      if (isObject(currentValue) && isObject(derivedObject[currentKey]) && !isArray(currentValue)
+      if (
+        isObject(currentValue) &&
+        isObject(derivedObject[currentKey]) &&
+        !isArray(currentValue)
       ) {
         resultingObject[currentKey as any] = diffDeep(
           currentValue,

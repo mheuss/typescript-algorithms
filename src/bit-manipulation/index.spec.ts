@@ -54,11 +54,10 @@ describe('Bitwise Manipulation', () => {
       expect(bitmask.toString()).toEqual('1111111111111111111111111111111');
     });
 
-    it('Should give us an array of set bits in integer form', ()=>{
+    it('Should give us an array of set bits in integer form', () => {
       const bitmask = new BitMasks(16908544);
       expect(bitmask.integerValuesOfSetBits()).toEqual([256, 131072, 16777216]);
-    })
-
+    });
 
     it('Should throw if we try to set too many', () => {
       const bitmask = new BitMasks(0);

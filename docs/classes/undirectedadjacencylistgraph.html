@@ -96,8 +96,10 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="undirectedadjacencylistgraph.html#addedge" class="tsd-kind-icon">add<wbr>Edge</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="undirectedadjacencylistgraph.html#addedgewithseparatepayloads" class="tsd-kind-icon">add<wbr>Edge<wbr>With<wbr>Separate<wbr>Payloads</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="undirectedadjacencylistgraph.html#addedgewithsharedpayload" class="tsd-kind-icon">add<wbr>Edge<wbr>With<wbr>Shared<wbr>Payload</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="undirectedadjacencylistgraph.html#addvertex" class="tsd-kind-icon">add<wbr>Vertex</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="undirectedadjacencylistgraph.html#depthfirsttraversal" class="tsd-kind-icon">depth<wbr>First<wbr>Traversal</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="undirectedadjacencylistgraph.html#getadjacencylist" class="tsd-kind-icon">get<wbr>Adjacency<wbr>List</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="undirectedadjacencylistgraph.html#removeedge" class="tsd-kind-icon">remove<wbr>Edge</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="undirectedadjacencylistgraph.html#removevertex" class="tsd-kind-icon">remove<wbr>Vertex</a></li>
@@ -118,7 +120,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mheuss/typescript-algorithms/blob/2acd870/src/graphs/undirected-adjacency-list/index.ts#L6">graphs/undirected-adjacency-list/index.ts:6</a></li>
+									<li>Defined in <a href="https://github.com/mheuss/typescript-algorithms/blob/a8482db/src/graphs/undirected-adjacency-list/index.ts#L12">graphs/undirected-adjacency-list/index.ts:12</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="undirectedadjacencylistgraph.html" class="tsd-signature-type">UndirectedAdjacencyListGraph</a></h4>
@@ -129,21 +131,21 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="addedge" class="tsd-anchor"></a>
-					<h3>add<wbr>Edge</h3>
+					<a name="addedgewithseparatepayloads" class="tsd-anchor"></a>
+					<h3>add<wbr>Edge<wbr>With<wbr>Separate<wbr>Payloads</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Edge<span class="tsd-signature-symbol">(</span>vertexOne<span class="tsd-signature-symbol">: </span><a href="../interfaces/iedgeparameter.html" class="tsd-signature-type">IEdgeParameter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EdgePayload</span><span class="tsd-signature-symbol">&gt;</span>, vertexTwo<span class="tsd-signature-symbol">: </span><a href="../interfaces/iedgeparameter.html" class="tsd-signature-type">IEdgeParameter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EdgePayload</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Edge<wbr>With<wbr>Separate<wbr>Payloads<span class="tsd-signature-symbol">(</span>vertexOne<span class="tsd-signature-symbol">: </span><a href="../interfaces/iedgeparameter.html" class="tsd-signature-type">IEdgeParameter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EdgePayload</span><span class="tsd-signature-symbol">&gt;</span>, vertexTwo<span class="tsd-signature-symbol">: </span><a href="../interfaces/iedgeparameter.html" class="tsd-signature-type">IEdgeParameter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EdgePayload</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mheuss/typescript-algorithms/blob/2acd870/src/graphs/undirected-adjacency-list/index.ts#L17">graphs/undirected-adjacency-list/index.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/mheuss/typescript-algorithms/blob/a8482db/src/graphs/undirected-adjacency-list/index.ts#L23">graphs/undirected-adjacency-list/index.ts:23</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Adds an edge to the graph between two vertices</p>
+									<p>Adds an edge to the graph between two vertices, with two seperate payloads defined</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -164,6 +166,45 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addedgewithsharedpayload" class="tsd-anchor"></a>
+					<h3>add<wbr>Edge<wbr>With<wbr>Shared<wbr>Payload</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Edge<wbr>With<wbr>Shared<wbr>Payload<span class="tsd-signature-symbol">(</span>vertexOneName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, vertexTwoName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, payload<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EdgePayload</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/mheuss/typescript-algorithms/blob/a8482db/src/graphs/undirected-adjacency-list/index.ts#L61">graphs/undirected-adjacency-list/index.ts:61</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Adds an edge, with a single payload shared between two vertices</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>ErrorCodes.OPERATION_BEYOND_BOUNDS if a vertex name does not exist</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>vertexOneName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>vertexTwoName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>payload: <span class="tsd-signature-type">EdgePayload</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="addvertex" class="tsd-anchor"></a>
 					<h3>add<wbr>Vertex</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -173,7 +214,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mheuss/typescript-algorithms/blob/2acd870/src/graphs/undirected-adjacency-list/index.ts#L53">graphs/undirected-adjacency-list/index.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/mheuss/typescript-algorithms/blob/a8482db/src/graphs/undirected-adjacency-list/index.ts#L98">graphs/undirected-adjacency-list/index.ts:98</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -199,6 +240,32 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="depthfirsttraversal" class="tsd-anchor"></a>
+					<h3>depth<wbr>First<wbr>Traversal</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">depth<wbr>First<wbr>Traversal<span class="tsd-signature-symbol">(</span>startingVertex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, callback<span class="tsd-signature-symbol">: </span><a href="../globals.html#traversalcallback" class="tsd-signature-type">TraversalCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">VertexPayload</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EdgePayload</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/mheuss/typescript-algorithms/blob/a8482db/src/graphs/undirected-adjacency-list/index.ts#L147">graphs/undirected-adjacency-list/index.ts:147</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>startingVertex: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>callback: <a href="../globals.html#traversalcallback" class="tsd-signature-type">TraversalCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">VertexPayload</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EdgePayload</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="getadjacencylist" class="tsd-anchor"></a>
 					<h3>get<wbr>Adjacency<wbr>List</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -208,7 +275,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mheuss/typescript-algorithms/blob/2acd870/src/graphs/undirected-adjacency-list/index.ts#L62">graphs/undirected-adjacency-list/index.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/mheuss/typescript-algorithms/blob/a8482db/src/graphs/undirected-adjacency-list/index.ts#L107">graphs/undirected-adjacency-list/index.ts:107</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -232,7 +299,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mheuss/typescript-algorithms/blob/2acd870/src/graphs/undirected-adjacency-list/index.ts#L71">graphs/undirected-adjacency-list/index.ts:71</a></li>
+									<li>Defined in <a href="https://github.com/mheuss/typescript-algorithms/blob/a8482db/src/graphs/undirected-adjacency-list/index.ts#L116">graphs/undirected-adjacency-list/index.ts:116</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -267,7 +334,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mheuss/typescript-algorithms/blob/2acd870/src/graphs/undirected-adjacency-list/index.ts#L91">graphs/undirected-adjacency-list/index.ts:91</a></li>
+									<li>Defined in <a href="https://github.com/mheuss/typescript-algorithms/blob/a8482db/src/graphs/undirected-adjacency-list/index.ts#L136">graphs/undirected-adjacency-list/index.ts:136</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -310,10 +377,16 @@
 								<a href="undirectedadjacencylistgraph.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="undirectedadjacencylistgraph.html#addedge" class="tsd-kind-icon">add<wbr>Edge</a>
+								<a href="undirectedadjacencylistgraph.html#addedgewithseparatepayloads" class="tsd-kind-icon">add<wbr>Edge<wbr>With<wbr>Separate<wbr>Payloads</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="undirectedadjacencylistgraph.html#addedgewithsharedpayload" class="tsd-kind-icon">add<wbr>Edge<wbr>With<wbr>Shared<wbr>Payload</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="undirectedadjacencylistgraph.html#addvertex" class="tsd-kind-icon">add<wbr>Vertex</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="undirectedadjacencylistgraph.html#depthfirsttraversal" class="tsd-kind-icon">depth<wbr>First<wbr>Traversal</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="undirectedadjacencylistgraph.html#getadjacencylist" class="tsd-kind-icon">get<wbr>Adjacency<wbr>List</a>

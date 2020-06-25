@@ -89,21 +89,22 @@ export class BitMasks {
    * Return the integer values of all sit bits
    * @returns {object} hashMap of bits
    */
-  public integerValuesOfSetBits=():number[] =>{
-    const stringRepresentation = this.toString().split('')
+  public integerValuesOfSetBits = (): number[] => {
+    const stringRepresentation = this.toString()
+      .split('')
       .reverse()
       .join('');
 
     const output: number[] = [];
 
-    for (let bit=0; bit<stringRepresentation.length; bit++) {
-      if (stringRepresentation[bit]==='1') {
+    for (let bit = 0; bit < stringRepresentation.length; bit++) {
+      if (stringRepresentation[bit] === '1') {
         output.push(Math.pow(2, bit));
       }
     }
 
     return output;
-  }
+  };
 
   /**
    * Modulo comparison done with bitwise operations

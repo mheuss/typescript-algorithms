@@ -23,7 +23,9 @@ export interface ITraversalPayload<VertexGeneric, EdgeGeneric> {
   vertexName: string;
 }
 
-export type TraversalCallback<VertexGeneric, EdgeGeneric> = (vertexAndEdge: ITraversalPayload<VertexGeneric, EdgeGeneric>)=>void;
+export type TraversalCallback<VertexGeneric, EdgeGeneric> = (
+  vertexAndEdge: ITraversalPayload<VertexGeneric, EdgeGeneric>
+) => void;
 
 export interface IVisitedVertex {
   [key: string]: boolean;
