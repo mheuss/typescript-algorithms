@@ -170,4 +170,24 @@ describe('Traversal', () => {
     graph.depthFirstTraversal('Maine', traversalCallback);
     expect(traversalAccumulator).toMatchSnapshot();
   });
+
+  it('Should do a Breadth First Traversal', () => {
+    const traversalAccumulator: string[] = [];
+    const traversalCallback = (
+      vertexAndEdge: ITraversalPayload<IStates, IDistance>
+    ) => {
+      if (vertexAndEdge.edge === undefined) {
+        traversalAccumulator.push(
+          `We are at ${vertexAndEdge.vertex.name}`
+        );
+        return;
+      }
+      traversalAccumulator.push(
+        `We are at ${vertexAndEdge.vertex.name} and we came from ${vertexAndEdge.edge.name}`
+      );
+    };
+
+    graph.breadthFirstTraversal('Maine', traversalCallback);
+    expect(traversalAccumulator).toMatchSnapshot();
+  });
 });

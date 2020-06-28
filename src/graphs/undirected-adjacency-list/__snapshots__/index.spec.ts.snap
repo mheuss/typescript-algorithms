@@ -92,6 +92,18 @@ Object {
 }
 `;
 
+exports[`Traversal Should do a Breadth First Traversal 1`] = `
+Array [
+  "We are at Maine",
+  "We are at New Hampshire and we came from Maine",
+  "We are at Massachusetts and we came from New Hampshire",
+  "We are at Vermont and we came from New Hampshire",
+  "We are at Connecticut and we came from Massachusetts",
+  "We are at Rhode Island and we came from Massachusetts",
+  "We are at New York and we came from Vermont",
+]
+`;
+
 exports[`Traversal Should do a Depth First Traversal 1`] = `
 Array [
   "We are at Maine",

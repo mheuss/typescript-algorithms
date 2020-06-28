@@ -1,6 +1,7 @@
 // Adjacency List - stores data in a list, indexed by the node
 import {ErrorCodes} from '../../constants';
-import {IEdgeParameter, IVertices, IVisitedVertex, TraversalCallback,} from './types';
+import {Queue} from "../../queues/fifo-queue";
+import {IEdgeParameter, IVertexAndEdgeName, IVertices, IVisitedVertex, TraversalCallback,} from './types';
 
 export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
   protected vertices: IVertices<VertexPayload, EdgePayload>;
@@ -138,7 +139,56 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
     }
   };
 
-  public breadthFirstTraversal
+  public breadthFirstTraversal = (
+    startingVertexName: string,
+    callback: TraversalCallback<VertexPayload, EdgePayload>
+  ) =>{
+    const visited: IVisitedVertex = {};
+    if (this.vertices[startingVertexName] === undefined) {
+      throw {
+        code: ErrorCodes.OPERATION_BEYOND_BOUNDS,
+        message: 'Invalid vertex passed in',
+      };
+    }
+
+    const fifoQueue = new Queue<IVertexAndEdgeName>();
+
+    this.breadthFirstTraversalHelper(startingVertexName, undefined, callback, visited, fifoQueue);
+  }
+
+  public breadthFirstTraversalHelper =(
+    currentVertexName: string,
+    incomingEdgeName: string | undefined,
+    callback: TraversalCallback<VertexPayload, EdgePayload>,
+    visited: IVisitedVertex,
+    queue: Queue<IVertexAndEdgeName>
+  )=>{
+    visited[currentVertexName] = true;
+
+    const currentVertex = this.vertices[currentVertexName];
+    const edge = incomingEdgeName===undefined ? undefined : currentVertex.edges[incomingEdgeName];
+
+    callback ({edge, vertex: currentVertex});
+
+    Object.keys(currentVertex.edges).forEach((vertexName)=>{
+      if (visited[vertexName]===undefined) {
+        queue.enqueue({vertexName, edgeName:currentVertexName});
+      }
+    });
+
+    let vertexAndEdge;
+
+    do {
+      vertexAndEdge = queue.dequeue();
+      if (vertexAndEdge===undefined) {
+        return;
+      }
+
+      if (visited[vertexAndEdge.vertexName]===undefined) {
+        this.breadthFirstTraversalHelper(vertexAndEdge.vertexName, vertexAndEdge.edgeName, callback, visited, queue);
+      }
+    } while (queue.length()>0);
+  }
 
   public depthFirstTraversal = (
     startingVertexName: string,
