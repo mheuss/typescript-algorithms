@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Binary Search Tree Unit tests NUmberic Tests Insert Tests Snapshot 1`] = `
+exports[`Binary Search Tree Unit tests Numeric Tests Insert Tests Snapshot 1`] = `
 Node {
   "children": Array [
     Node {
@@ -38,6 +38,8 @@ Node {
   "value": 3,
 }
 `;
+
+exports[`Binary Search Tree Unit tests Test with Objects Should fail a find when no comparator is present 1`] = `"A custom comparison function is needed for arrays of types other than string or numbers"`;
 
 exports[`Binary Search Tree Unit tests Test with strings Insert Tests Snapshot 1`] = `
 Node {

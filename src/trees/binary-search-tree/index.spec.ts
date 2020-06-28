@@ -3,8 +3,12 @@ import { BinarySearchTree } from './index';
 
 const ROOT = 'root';
 
+interface ITestObject {
+  payload: number;
+}
+
 describe('Binary Search Tree Unit tests', () => {
-  describe('NUmberic Tests', () => {
+  describe('Numeric Tests', () => {
     const tree = new BinarySearchTree<number>();
 
     describe('Insert Tests', () => {
@@ -48,6 +52,10 @@ describe('Binary Search Tree Unit tests', () => {
     });
 
     describe('Find tests', () => {
+      it('Should return false for bad data ', () => {
+        expect(tree.find(null as any )).toBeFalsy();
+      });
+
       it('Should find a value on the left', () => {
         expect(tree.find(15)).toBeTruthy();
       });
@@ -131,6 +139,15 @@ describe('Binary Search Tree Unit tests', () => {
       it('Should not find values that do not exist on the right', () => {
         expect(tree.find('Whiskey')).toBeFalsy();
       });
+    });
+  });
+
+  describe('Test with Objects', () => {
+    const tree = new BinarySearchTree<ITestObject>();
+    it('Should fail a find when no comparator is present', () => {
+      const MAHROOT = 'root';
+      tree[MAHROOT]={some:'test'} as any;
+      expect(()=>{tree.find({payload: 34})}).toThrowErrorMatchingSnapshot();
     });
   });
 });
