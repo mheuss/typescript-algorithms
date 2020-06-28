@@ -171,6 +171,15 @@ describe('Traversal', () => {
     expect(traversalAccumulator).toMatchSnapshot();
   });
 
+  it('Should not do a Depth First Traversal if we do not give it a valid starting point', () => {
+    const traversalCallback = (
+    ) => {
+      return;
+    };
+
+    expect(()=>{graph.depthFirstTraversal('Splasndis', traversalCallback)}).toThrowErrorMatchingSnapshot();
+  });
+
   it('Should do a Breadth First Traversal', () => {
     const traversalAccumulator: string[] = [];
     const traversalCallback = (
@@ -189,5 +198,14 @@ describe('Traversal', () => {
 
     graph.breadthFirstTraversal('Maine', traversalCallback);
     expect(traversalAccumulator).toMatchSnapshot();
+  });
+
+  it('Should not do a Breadth First Traversal if we do not give it a valid starting point', () => {
+    const traversalCallback = (
+    ) => {
+      return;
+    };
+
+    expect(()=>{graph.breadthFirstTraversal('Splasndis', traversalCallback)}).toThrowErrorMatchingSnapshot();
   });
 });

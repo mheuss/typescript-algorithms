@@ -4,7 +4,7 @@
  * @returns {Promise<string>} Returns a promise that will resolve to a string containing the contents of the file in question.
  */
 
-export function readLocalFileAsDataURL(file: File): Promise<string> {
+export async function readLocalFileAsDataURL(file: File): Promise<string> {
   return new Promise((resolve, reject) => {
     const imageFile = new FileReader();
     imageFile.onload = () => {
@@ -12,6 +12,7 @@ export function readLocalFileAsDataURL(file: File): Promise<string> {
       resolve(contents as string);
     };
     imageFile.onerror = (e) => {
+      /* istanbul ignore next */
       reject(e);
     };
 

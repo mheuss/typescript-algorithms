@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Priority Queue Comparison Should throw if I provide it garbage 1`] = `"I can not compare [object Object] and [object Object]"`;

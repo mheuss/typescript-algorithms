@@ -159,7 +159,7 @@ function resetOrientation(
         ctx.transform(0, -1, 1, 0, 0, width);
         break;
       default:
-        if (compressionFlag === false) {
+        if (!compressionFlag) {
           callback(srcBase64);
           return;
         }

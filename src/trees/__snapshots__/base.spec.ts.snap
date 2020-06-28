@@ -50,3 +50,54 @@ Node {
   "value": 7,
 }
 `;
+
+exports[`Base Tree Unit tests Load/Save data into the tree With Data Should load data into the tree 1`] = `
+Node {
+  "children": Array [
+    Node {
+      "children": Array [
+        Node {
+          "children": Array [],
+          "parent": [Circular],
+          "value": 5,
+        },
+        Node {
+          "children": Array [],
+          "parent": [Circular],
+          "value": 4,
+        },
+        Node {
+          "children": Array [],
+          "parent": [Circular],
+          "value": 3,
+        },
+      ],
+      "parent": [Circular],
+      "value": 8,
+    },
+    Node {
+      "children": Array [
+        Node {
+          "children": Array [],
+          "parent": [Circular],
+          "value": 2,
+        },
+        Node {
+          "children": Array [],
+          "parent": [Circular],
+          "value": 1,
+        },
+        Node {
+          "children": Array [],
+          "parent": [Circular],
+          "value": 0,
+        },
+      ],
+      "parent": [Circular],
+      "value": 6,
+    },
+  ],
+  "parent": null,
+  "value": 7,
+}
+`;

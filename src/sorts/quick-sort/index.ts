@@ -63,7 +63,7 @@ export function QuickSort<T>(
   incomingArray: T[],
   comparison?: ComparisonFunction<T>
 ): T[] {
-  if (incomingArray.length <= 1) {
+  if (incomingArray.length <= 0) {
     return incomingArray;
   }
 

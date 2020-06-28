@@ -1,13 +1,13 @@
-import { numericComparison } from '../comparisons/numbers';
-import { stringComparison } from '../comparisons/strings';
-import { ErrorCodes } from '../constants';
-import { GenericTree } from './base';
-import { Node } from './binary-search-tree/node';
-import { ITreeObject, Traversal } from './constants';
+import {numericComparison} from '../comparisons/numbers';
+import {stringComparison} from '../comparisons/strings';
+import {ErrorCodes} from '../constants';
+import {GenericTree} from './base';
+import {Node} from './binary-search-tree/node';
+import {ITreeObject, Traversal} from './constants';
 
 describe('Base Tree Unit tests', () => {
   it('Should return the count of nodes in a given tree', () => {
-    const tree = new GenericTree<number>({ numberOfAllowedChildrenPerNode: 3 });
+    const tree = new GenericTree<number>({numberOfAllowedChildrenPerNode: 3});
     expect(tree.getNodeCount()).toEqual(0);
     const NC = 'nodeCount';
     tree[NC] = 13;
@@ -47,7 +47,7 @@ describe('Base Tree Unit tests', () => {
       try {
         // tslint:disable-next-line:no-unused-expression
         new GenericTree<number>({
-          initializeWithDataFile: { salad: 'yes please' } as any,
+          initializeWithDataFile: {salad: 'yes please'} as any,
         });
         fail('Should not have got here');
       } catch (e) {
@@ -81,7 +81,7 @@ describe('Base Tree Unit tests', () => {
 
     it("Should throw if it ain't got one", () => {
       try {
-        GenericTree[StaticComparisonFunction]({ emf: 'Whoa' });
+        GenericTree[StaticComparisonFunction]({emf: 'Whoa'});
         fail("Shouldn't be here");
       } catch (e) {
         expect(e.code).toEqual(ErrorCodes.COMPARISON_FUNCTION_REQUIRED);
@@ -90,20 +90,41 @@ describe('Base Tree Unit tests', () => {
   });
 
   describe('Load/Save data into the tree', () => {
-    const tree = new GenericTree<number>({ numberOfAllowedChildrenPerNode: 3 });
-    it('Should load data into the tree', () => {
-      tree.loadTreeFromObject(treeData);
-      const ROOT = 'root';
-      expect(tree[ROOT]).toMatchSnapshot();
-      expect(tree.getNodeCount()).toEqual(9);
-    });
+    describe('With Data', () => {
+      const tree = new GenericTree<number>({numberOfAllowedChildrenPerNode: 3});
+      it('Should load data into the tree', () => {
+        tree.loadTreeFromObject(treeData);
+        const ROOT = 'root';
+        expect(tree[ROOT]).toMatchSnapshot();
+        expect(tree.getNodeCount()).toEqual(9);
+      });
 
-    it('Should export the data back out', () => {
-      expect(tree.saveTreeFromObject()).toEqual(treeData);
+      it('Should export the data back out', () => {
+        expect(tree.saveTreeFromObject()).toEqual(treeData);
+      });
+    });
+    describe('Without data', () => {
+      it('Should return undefined if we got nothing to save', () => {
+        const tree = new GenericTree<number>({numberOfAllowedChildrenPerNode: 3});
+        expect(tree.saveTreeFromObject()).toBeUndefined();
+      })
     });
   });
 
   describe('Traversals', () => {
+    it('Should do nothing if we give it no data to work with', () => {
+      const tree = new GenericTree<number>({
+        comparisonFunction: numericComparison,
+        numberOfAllowedChildrenPerNode: 3,
+      });
+      const output: number[] = [];
+      const lambda = (node: Node<number>) => {
+        output.push(node.value);
+      };
+      tree.traverse(Traversal.Breadth_First, lambda);
+      expect(output).toEqual([]);
+    });
+
     it('Should do Breadth First', () => {
       const tree = new GenericTree<number>({
         comparisonFunction: numericComparison,

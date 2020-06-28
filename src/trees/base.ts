@@ -124,15 +124,13 @@ export class GenericTree<T> {
 
     do {
       const node = queue.dequeue();
-      if (!node) {
-        continue;
+      if (node) {
+        operation(node);
+
+        node.children.forEach(child => {
+          queue.enqueue(child);
+        });
       }
-
-      operation(node);
-
-      node.children.forEach(child => {
-        queue.enqueue(child);
-      });
     } while (queue.length() !== 0);
   }
 

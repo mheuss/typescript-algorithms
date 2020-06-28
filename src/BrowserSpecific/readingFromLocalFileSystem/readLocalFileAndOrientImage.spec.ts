@@ -45,26 +45,3 @@ describe("Testing doIBeCompressing", () => {
     expect(results).toBeFalsy();
   });
 });
-
-/*
-export function doIBeCompressing(options: Options): boolean {
-  const alwaysApplyCompression =
-    options.alwaysApplyCompression === undefined
-      ? false
-      : options.alwaysApplyCompression;
-
-  if (alwaysApplyCompression) {
-    return true;
-  }
-
-  if (options.compressWhenAboveFileSize === undefined) {
-    return false;
-  }
-
-  if (options.file.size > options.compressWhenAboveFileSize) {
-    return true;
-  }
-
-  return false;
-}
-*/

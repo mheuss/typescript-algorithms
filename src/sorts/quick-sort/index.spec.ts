@@ -8,6 +8,12 @@ describe('Merge Sort tests', () => {
     ).toEqual([-1, 0, 2, 5, 12, 23, 54, 76, 97]);
   });
 
+  it('Should just return if given a signle number in an array', () => {
+    expect(
+      QuickSort<number>([1])
+    ).toEqual([1]);
+  });
+
   it('Should properly sort a list of strings', () => {
     expect(
       QuickSort<string>([

@@ -156,40 +156,6 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
     this.breadthFirstTraversalHelper(startingVertexName, undefined, callback, visited, fifoQueue);
   }
 
-  public breadthFirstTraversalHelper =(
-    currentVertexName: string,
-    incomingEdgeName: string | undefined,
-    callback: TraversalCallback<VertexPayload, EdgePayload>,
-    visited: IVisitedVertex,
-    queue: Queue<IVertexAndEdgeName>
-  )=>{
-    visited[currentVertexName] = true;
-
-    const currentVertex = this.vertices[currentVertexName];
-    const edge = incomingEdgeName===undefined ? undefined : currentVertex.edges[incomingEdgeName];
-
-    callback ({edge, vertex: currentVertex});
-
-    Object.keys(currentVertex.edges).forEach((vertexName)=>{
-      if (visited[vertexName]===undefined) {
-        queue.enqueue({vertexName, edgeName:currentVertexName});
-      }
-    });
-
-    let vertexAndEdge;
-
-    do {
-      vertexAndEdge = queue.dequeue();
-      if (vertexAndEdge===undefined) {
-        return;
-      }
-
-      if (visited[vertexAndEdge.vertexName]===undefined) {
-        this.breadthFirstTraversalHelper(vertexAndEdge.vertexName, vertexAndEdge.edgeName, callback, visited, queue);
-      }
-    } while (queue.length()>0);
-  }
-
   public depthFirstTraversal = (
     startingVertexName: string,
     callback: TraversalCallback<VertexPayload, EdgePayload>
@@ -224,9 +190,6 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
     callback ({edge, vertex: currentVertex});
 
     const connectedVertices = Object.keys(currentVertex.edges);
-    if (connectedVertices.length === 0) {
-      return;
-    }
 
     connectedVertices.forEach(connectedVertexName => {
       if (visited[connectedVertexName] === undefined) {
@@ -239,4 +202,36 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
       }
     });
   };
+
+  private breadthFirstTraversalHelper =(
+    currentVertexName: string,
+    incomingEdgeName: string | undefined,
+    callback: TraversalCallback<VertexPayload, EdgePayload>,
+    visited: IVisitedVertex,
+    queue: Queue<IVertexAndEdgeName>
+  )=>{
+    visited[currentVertexName] = true;
+
+    const currentVertex = this.vertices[currentVertexName];
+    const edge = incomingEdgeName===undefined ? undefined : currentVertex.edges[incomingEdgeName];
+
+    callback ({edge, vertex: currentVertex});
+
+    Object.keys(currentVertex.edges).forEach((vertexName)=>{
+      if (visited[vertexName]===undefined) {
+        queue.enqueue({vertexName, edgeName:currentVertexName});
+      }
+    });
+
+    let vertexAndEdge;
+
+    do {
+      vertexAndEdge = queue.dequeue();
+      if (vertexAndEdge!==undefined) {
+        if (visited[vertexAndEdge.vertexName]===undefined) {
+          this.breadthFirstTraversalHelper(vertexAndEdge.vertexName, vertexAndEdge.edgeName, callback, visited, queue);
+        }
+      }
+    } while (queue.length()>0);
+  }
 }
