@@ -9,18 +9,22 @@ export interface IVertices<VertexGeneric, EdgeGeneric> {
 
 export interface IVertex<VertexGeneric, EdgeGeneric> {
   edges: IEdges<EdgeGeneric>;
+  name: string;
   payload?: VertexGeneric;
 }
 
 export interface IEdges<EdgeGeneric> {
-  [key: string]: EdgeGeneric;
+  [key: string]: IEdge<EdgeGeneric>;
+}
+
+export interface IEdge<EdgeGeneric> {
+  payload: EdgeGeneric;
+  name: string;
 }
 
 export interface ITraversalPayload<VertexGeneric, EdgeGeneric> {
-  connectedVertexName?: string;
-  edge?: EdgeGeneric;
+  edge?: IEdge<EdgeGeneric>;
   vertex: IVertex<VertexGeneric, EdgeGeneric>;
-  vertexName: string;
 }
 
 export type TraversalCallback<VertexGeneric, EdgeGeneric> = (
@@ -29,4 +33,9 @@ export type TraversalCallback<VertexGeneric, EdgeGeneric> = (
 
 export interface IVisitedVertex {
   [key: string]: boolean;
+}
+
+export interface IVertexAndEdgeName {
+  vertexName: string;
+  edgeName: string;
 }

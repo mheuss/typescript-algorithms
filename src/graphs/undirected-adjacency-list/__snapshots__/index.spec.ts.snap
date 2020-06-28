@@ -4,21 +4,36 @@ exports[`Removal Should remove a vertex 1`] = `
 Object {
   "Point B": Object {
     "edges": Object {
-      "Point C": true,
-      "Point D": true,
+      "Point C": Object {
+        "name": "Point C",
+        "payload": true,
+      },
+      "Point D": Object {
+        "name": "Point D",
+        "payload": true,
+      },
     },
+    "name": "Point B",
     "payload": true,
   },
   "Point C": Object {
     "edges": Object {
-      "Point B": false,
+      "Point B": Object {
+        "name": "Point B",
+        "payload": false,
+      },
     },
+    "name": "Point C",
     "payload": false,
   },
   "Point D": Object {
     "edges": Object {
-      "Point B": false,
+      "Point B": Object {
+        "name": "Point B",
+        "payload": false,
+      },
     },
+    "name": "Point D",
     "payload": false,
   },
 }
@@ -28,28 +43,50 @@ exports[`Removal should remove an edge 1`] = `
 Object {
   "Point A": Object {
     "edges": Object {
-      "Point C": true,
+      "Point C": Object {
+        "name": "Point C",
+        "payload": true,
+      },
     },
+    "name": "Point A",
     "payload": true,
   },
   "Point B": Object {
     "edges": Object {
-      "Point C": true,
-      "Point D": true,
+      "Point C": Object {
+        "name": "Point C",
+        "payload": true,
+      },
+      "Point D": Object {
+        "name": "Point D",
+        "payload": true,
+      },
     },
+    "name": "Point B",
     "payload": true,
   },
   "Point C": Object {
     "edges": Object {
-      "Point A": false,
-      "Point B": false,
+      "Point A": Object {
+        "name": "Point A",
+        "payload": false,
+      },
+      "Point B": Object {
+        "name": "Point B",
+        "payload": false,
+      },
     },
+    "name": "Point C",
     "payload": false,
   },
   "Point D": Object {
     "edges": Object {
-      "Point B": false,
+      "Point B": Object {
+        "name": "Point B",
+        "payload": false,
+      },
     },
+    "name": "Point D",
     "payload": false,
   },
 }
@@ -57,20 +94,13 @@ Object {
 
 exports[`Traversal Should do a Depth First Traversal 1`] = `
 Array [
-  "The vertex is named Maine and we are going to New Hampshire",
-  "The vertex is named New Hampshire and we are going to Massachusetts",
-  "The vertex is named Massachusetts and we are going to Connecticut",
-  "The vertex is named Connecticut and we are going to Rhode Island",
-  "The vertex is named Rhode Island and we have no unvisited connections",
-  "The vertex is named Connecticut and we are going to New York",
-  "The vertex is named New York and we are going to Vermont",
-  "The vertex is named Vermont and we have no unvisited connections",
-  "The vertex is named Massachusetts and we are going to Vermont",
-  "The vertex is named Vermont and we have no unvisited connections",
-  "The vertex is named Massachusetts and we are going to Rhode Island",
-  "The vertex is named Rhode Island and we have no unvisited connections",
-  "The vertex is named New Hampshire and we are going to Vermont",
-  "The vertex is named Vermont and we have no unvisited connections",
+  "We are at Maine",
+  "We are at New Hampshire and we came from Maine",
+  "We are at Massachusetts and we came from New Hampshire",
+  "We are at Connecticut and we came from Massachusetts",
+  "We are at Rhode Island and we came from Connecticut",
+  "We are at New York and we came from Connecticut",
+  "We are at Vermont and we came from New York",
 ]
 `;
 
