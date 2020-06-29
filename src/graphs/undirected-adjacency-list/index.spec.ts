@@ -1,13 +1,13 @@
-import {UndirectedAdjacencyListGraph} from './index';
-import {IDistance, IStates} from './mockData';
-import {ITraversalPayload} from "./types";
+import { UndirectedAdjacencyListGraph } from './index';
+import { IDistance, IStates } from './mockData';
+import { ITraversalPayload } from './types';
 
 describe('Undirected Adjacency Graph Unit tests', () => {
   it('Should add a vertex when asked', () => {
     const graph = new UndirectedAdjacencyListGraph<string, boolean>();
     graph.addVertex('New Vertex', 'Molly Coddle');
     expect(graph.getAdjacencyList()).toEqual({
-      'New Vertex': {edges: {}, name: 'New Vertex', payload: 'Molly Coddle'},
+      'New Vertex': { edges: {}, name: 'New Vertex', payload: 'Molly Coddle' },
     });
   });
 
@@ -17,12 +17,20 @@ describe('Undirected Adjacency Graph Unit tests', () => {
       graph.addVertex('Point A', true);
       graph.addVertex('Point B', false);
       graph.addEdgeWithSeparatePayloads(
-        {name: 'Point A', payload: true},
-        {name: 'Point B', payload: false}
+        { name: 'Point A', payload: true },
+        { name: 'Point B', payload: false }
       );
       expect(graph.getAdjacencyList()).toEqual({
-        'Point A': {edges: {'Point B': {name: 'Point B', payload: true}}, name: 'Point A', payload: true},
-        'Point B': {edges: {'Point A': {name: 'Point A', payload: false}}, name: 'Point B', payload: false},
+        'Point A': {
+          edges: { 'Point B': { name: 'Point B', payload: true } },
+          name: 'Point A',
+          payload: true,
+        },
+        'Point B': {
+          edges: { 'Point A': { name: 'Point A', payload: false } },
+          name: 'Point B',
+          payload: false,
+        },
       });
     });
 
@@ -33,8 +41,8 @@ describe('Undirected Adjacency Graph Unit tests', () => {
 
       expect(() =>
         graph.addEdgeWithSeparatePayloads(
-          {name: 'Point A', payload: true},
-          {name: 'Point C', payload: true}
+          { name: 'Point A', payload: true },
+          { name: 'Point C', payload: true }
         )
       ).toThrowErrorMatchingSnapshot();
     });
@@ -46,8 +54,16 @@ describe('Undirected Adjacency Graph Unit tests', () => {
     graph.addVertex('Point B', false);
     graph.addEdgeWithSharedPayload('Point A', 'Point B', false);
     expect(graph.getAdjacencyList()).toEqual({
-      'Point A': {edges: {'Point B': {name: 'Point B', payload: false}}, name: 'Point A', payload: true},
-      'Point B': {edges: {'Point A': {name: 'Point A', payload: false}}, name: 'Point B', payload: false},
+      'Point A': {
+        edges: { 'Point B': { name: 'Point B', payload: false } },
+        name: 'Point A',
+        payload: true,
+      },
+      'Point B': {
+        edges: { 'Point A': { name: 'Point A', payload: false } },
+        name: 'Point B',
+        payload: false,
+      },
     });
   });
 
@@ -72,36 +88,36 @@ describe('Removal', () => {
     graph.addVertex('Point C', false);
     graph.addVertex('Point D', false);
     graph.addEdgeWithSeparatePayloads(
-      {name: 'Point A', payload: true},
-      {name: 'Point D', payload: false}
+      { name: 'Point A', payload: true },
+      { name: 'Point D', payload: false }
     );
     graph.addEdgeWithSeparatePayloads(
-      {name: 'Point A', payload: true},
-      {name: 'Point C', payload: false}
+      { name: 'Point A', payload: true },
+      { name: 'Point C', payload: false }
     );
     graph.addEdgeWithSeparatePayloads(
-      {name: 'Point B', payload: true},
-      {name: 'Point D', payload: false}
+      { name: 'Point B', payload: true },
+      { name: 'Point D', payload: false }
     );
     graph.addEdgeWithSeparatePayloads(
-      {name: 'Point B', payload: true},
-      {name: 'Point C', payload: false}
+      { name: 'Point B', payload: true },
+      { name: 'Point C', payload: false }
     );
     graph.addEdgeWithSeparatePayloads(
-      {name: 'Point C', payload: true},
-      {name: 'Point A', payload: false}
+      { name: 'Point C', payload: true },
+      { name: 'Point A', payload: false }
     );
     graph.addEdgeWithSeparatePayloads(
-      {name: 'Point C', payload: true},
-      {name: 'Point B', payload: false}
+      { name: 'Point C', payload: true },
+      { name: 'Point B', payload: false }
     );
     graph.addEdgeWithSeparatePayloads(
-      {name: 'Point D', payload: true},
-      {name: 'Point A', payload: false}
+      { name: 'Point D', payload: true },
+      { name: 'Point A', payload: false }
     );
     graph.addEdgeWithSeparatePayloads(
-      {name: 'Point D', payload: true},
-      {name: 'Point B', payload: false}
+      { name: 'Point D', payload: true },
+      { name: 'Point B', payload: false }
     );
   });
 
@@ -121,35 +137,35 @@ describe('Traversal', () => {
   beforeEach(() => {
     graph = new UndirectedAdjacencyListGraph<IStates, IDistance>();
 
-    graph.addVertex('Connecticut', {capital: 'Hartford'});
-    graph.addVertex('Maine', {capital: 'Augusta'});
-    graph.addVertex('Massachusetts', {capital: 'Boston'});
-    graph.addVertex('New Hampshire', {capital: 'Concord'});
-    graph.addVertex('New York', {capital: 'Albany'});
-    graph.addVertex('Rhode Island', {capital: 'Providence'});
-    graph.addVertex('Vermont', {capital: 'Montpelier'});
+    graph.addVertex('Connecticut', { capital: 'Hartford' });
+    graph.addVertex('Maine', { capital: 'Augusta' });
+    graph.addVertex('Massachusetts', { capital: 'Boston' });
+    graph.addVertex('New Hampshire', { capital: 'Concord' });
+    graph.addVertex('New York', { capital: 'Albany' });
+    graph.addVertex('Rhode Island', { capital: 'Providence' });
+    graph.addVertex('Vermont', { capital: 'Montpelier' });
 
     graph.addEdgeWithSharedPayload('Connecticut', 'Rhode Island', {
       miles: 87,
     });
-    graph.addEdgeWithSharedPayload('Connecticut', 'New York', {miles: 163});
+    graph.addEdgeWithSharedPayload('Connecticut', 'New York', { miles: 163 });
     graph.addEdgeWithSharedPayload('Connecticut', 'Massachusetts', {
       miles: 50,
     });
 
-    graph.addEdgeWithSharedPayload('Maine', 'New Hampshire', {miles: 164});
+    graph.addEdgeWithSharedPayload('Maine', 'New Hampshire', { miles: 164 });
 
     graph.addEdgeWithSharedPayload('Massachusetts', 'New Hampshire', {
       miles: 164,
     });
-    graph.addEdgeWithSharedPayload('Massachusetts', 'Vermont', {miles: 180});
+    graph.addEdgeWithSharedPayload('Massachusetts', 'Vermont', { miles: 180 });
     graph.addEdgeWithSharedPayload('Massachusetts', 'Rhode Island', {
       miles: 50,
     });
 
-    graph.addEdgeWithSharedPayload('New Hampshire', 'Vermont', {miles: 116});
+    graph.addEdgeWithSharedPayload('New Hampshire', 'Vermont', { miles: 116 });
 
-    graph.addEdgeWithSharedPayload('New York', 'Vermont', {miles: 158});
+    graph.addEdgeWithSharedPayload('New York', 'Vermont', { miles: 158 });
   });
   it('Should do a Depth First Traversal', () => {
     const traversalAccumulator: string[] = [];
@@ -157,9 +173,7 @@ describe('Traversal', () => {
       vertexAndEdge: ITraversalPayload<IStates, IDistance>
     ) => {
       if (vertexAndEdge.edge === undefined) {
-        traversalAccumulator.push(
-          `We are at ${vertexAndEdge.vertex.name}`
-        );
+        traversalAccumulator.push(`We are at ${vertexAndEdge.vertex.name}`);
         return;
       }
       traversalAccumulator.push(
@@ -172,12 +186,13 @@ describe('Traversal', () => {
   });
 
   it('Should not do a Depth First Traversal if we do not give it a valid starting point', () => {
-    const traversalCallback = (
-    ) => {
+    const traversalCallback = () => {
       return;
     };
 
-    expect(()=>{graph.depthFirstTraversal('Splasndis', traversalCallback)}).toThrowErrorMatchingSnapshot();
+    expect(() => {
+      graph.depthFirstTraversal('Splasndis', traversalCallback);
+    }).toThrowErrorMatchingSnapshot();
   });
 
   it('Should do a Breadth First Traversal', () => {
@@ -186,9 +201,7 @@ describe('Traversal', () => {
       vertexAndEdge: ITraversalPayload<IStates, IDistance>
     ) => {
       if (vertexAndEdge.edge === undefined) {
-        traversalAccumulator.push(
-          `We are at ${vertexAndEdge.vertex.name}`
-        );
+        traversalAccumulator.push(`We are at ${vertexAndEdge.vertex.name}`);
         return;
       }
       traversalAccumulator.push(
@@ -201,11 +214,12 @@ describe('Traversal', () => {
   });
 
   it('Should not do a Breadth First Traversal if we do not give it a valid starting point', () => {
-    const traversalCallback = (
-    ) => {
+    const traversalCallback = () => {
       return;
     };
 
-    expect(()=>{graph.breadthFirstTraversal('Splasndis', traversalCallback)}).toThrowErrorMatchingSnapshot();
+    expect(() => {
+      graph.breadthFirstTraversal('Splasndis', traversalCallback);
+    }).toThrowErrorMatchingSnapshot();
   });
 });

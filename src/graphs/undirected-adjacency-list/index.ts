@@ -1,7 +1,13 @@
 // Adjacency List - stores data in a list, indexed by the node
-import {ErrorCodes} from '../../constants';
-import {Queue} from "../../queues/fifo-queue";
-import {IEdgeParameter, IVertexAndEdgeName, IVertices, IVisitedVertex, TraversalCallback,} from './types';
+import { ErrorCodes } from '../../constants';
+import { Queue } from '../../queues/fifo-queue';
+import {
+  IEdgeParameter,
+  IVertexAndEdgeName,
+  IVertices,
+  IVisitedVertex,
+  TraversalCallback,
+} from './types';
 
 export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
   protected vertices: IVertices<VertexPayload, EdgePayload>;
@@ -34,7 +40,10 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
       this.vertices[vertexOne.name].edges[vertexTwo.name] === undefined &&
       vertexOne.payload !== undefined
     ) {
-      this.vertices[vertexOne.name].edges[vertexTwo.name] = {payload: vertexOne.payload, name: vertexTwo.name};
+      this.vertices[vertexOne.name].edges[vertexTwo.name] = {
+        name: vertexTwo.name,
+        payload: vertexOne.payload,
+      };
     }
 
     if (
@@ -42,7 +51,10 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
       this.vertices[vertexTwo.name].edges[vertexOne.name] === undefined &&
       vertexTwo.payload !== undefined
     ) {
-      this.vertices[vertexTwo.name].edges[vertexOne.name] =  {payload: vertexTwo.payload, name: vertexOne.name}
+      this.vertices[vertexTwo.name].edges[vertexOne.name] = {
+        name: vertexOne.name,
+        payload: vertexTwo.payload,
+      };
     }
   };
 
@@ -73,7 +85,10 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
       this.vertices[vertexOneName].edges[vertexTwoName] === undefined &&
       payload !== undefined
     ) {
-      this.vertices[vertexOneName].edges[vertexTwoName] = {payload, name: vertexTwoName};
+      this.vertices[vertexOneName].edges[vertexTwoName] = {
+        name: vertexTwoName,
+        payload,
+      };
     }
 
     if (
@@ -81,7 +96,10 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
       this.vertices[vertexTwoName].edges[vertexOneName] === undefined &&
       payload !== undefined
     ) {
-      this.vertices[vertexTwoName].edges[vertexOneName] = {payload, name: vertexOneName};
+      this.vertices[vertexTwoName].edges[vertexOneName] = {
+        name: vertexOneName,
+        payload,
+      };
     }
   };
 
@@ -92,7 +110,7 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
    */
   public addVertex = (name: string, payload?: VertexPayload) => {
     if (!this.vertices[name]) {
-      this.vertices[name] = {edges: {}, payload, name};
+      this.vertices[name] = { edges: {}, payload, name };
     }
   };
 
@@ -100,7 +118,7 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
    * Returns the object containing the vertex and edge data
    */
   public getAdjacencyList = () => {
-    return {...this.vertices};
+    return { ...this.vertices };
   };
 
   /**
@@ -142,7 +160,7 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
   public breadthFirstTraversal = (
     startingVertexName: string,
     callback: TraversalCallback<VertexPayload, EdgePayload>
-  ) =>{
+  ) => {
     const visited: IVisitedVertex = {};
     if (this.vertices[startingVertexName] === undefined) {
       throw {
@@ -153,8 +171,14 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
 
     const fifoQueue = new Queue<IVertexAndEdgeName>();
 
-    this.breadthFirstTraversalHelper(startingVertexName, undefined, callback, visited, fifoQueue);
-  }
+    this.breadthFirstTraversalHelper(
+      startingVertexName,
+      undefined,
+      callback,
+      visited,
+      fifoQueue
+    );
+  };
 
   public depthFirstTraversal = (
     startingVertexName: string,
@@ -185,9 +209,12 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
     visited[currentVertexName] = true;
 
     const currentVertex = this.vertices[currentVertexName];
-    const edge = incomingEdgeName===undefined ? undefined : currentVertex.edges[incomingEdgeName];
+    const edge =
+      incomingEdgeName === undefined
+        ? undefined
+        : currentVertex.edges[incomingEdgeName];
 
-    callback ({edge, vertex: currentVertex});
+    callback({ edge, vertex: currentVertex });
 
     const connectedVertices = Object.keys(currentVertex.edges);
 
@@ -203,23 +230,26 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
     });
   };
 
-  private breadthFirstTraversalHelper =(
+  private breadthFirstTraversalHelper = (
     currentVertexName: string,
     incomingEdgeName: string | undefined,
     callback: TraversalCallback<VertexPayload, EdgePayload>,
     visited: IVisitedVertex,
     queue: Queue<IVertexAndEdgeName>
-  )=>{
+  ) => {
     visited[currentVertexName] = true;
 
     const currentVertex = this.vertices[currentVertexName];
-    const edge = incomingEdgeName===undefined ? undefined : currentVertex.edges[incomingEdgeName];
+    const edge =
+      incomingEdgeName === undefined
+        ? undefined
+        : currentVertex.edges[incomingEdgeName];
 
-    callback ({edge, vertex: currentVertex});
+    callback({ edge, vertex: currentVertex });
 
-    Object.keys(currentVertex.edges).forEach((vertexName)=>{
-      if (visited[vertexName]===undefined) {
-        queue.enqueue({vertexName, edgeName:currentVertexName});
+    Object.keys(currentVertex.edges).forEach(vertexName => {
+      if (visited[vertexName] === undefined) {
+        queue.enqueue({ vertexName, edgeName: currentVertexName });
       }
     });
 
@@ -227,11 +257,17 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
 
     do {
       vertexAndEdge = queue.dequeue();
-      if (vertexAndEdge!==undefined) {
-        if (visited[vertexAndEdge.vertexName]===undefined) {
-          this.breadthFirstTraversalHelper(vertexAndEdge.vertexName, vertexAndEdge.edgeName, callback, visited, queue);
+      if (vertexAndEdge !== undefined) {
+        if (visited[vertexAndEdge.vertexName] === undefined) {
+          this.breadthFirstTraversalHelper(
+            vertexAndEdge.vertexName,
+            vertexAndEdge.edgeName,
+            callback,
+            visited,
+            queue
+          );
         }
       }
-    } while (queue.length()>0);
-  }
+    } while (queue.length() > 0);
+  };
 }

@@ -1,13 +1,13 @@
-import { readLocalFileAsDataURL } from "./readLocalFileAsDataURL";
+import { readLocalFileAsDataURL } from './readLocalFileAsDataURL';
 
-const nameElement = "name";
+const nameElement = 'name';
 
-describe("Test for ReadLocalFileAsDataURL", () => {
-  it("Should read file and resolve contents", async () => {
-    const content = "Blob Ross";
-    const blob = new Blob([content], { type: "text/html" });
+describe('Test for ReadLocalFileAsDataURL', () => {
+  it('Should read file and resolve contents', async () => {
+    const content = 'Blob Ross';
+    const blob = new Blob([content], { type: 'text/html' });
     // @ts-ignore
-    blob[nameElement] = "test.jpg";
+    blob[nameElement] = 'test.jpg';
     const event = {
       target: {
         files: [blob],
@@ -16,6 +16,6 @@ describe("Test for ReadLocalFileAsDataURL", () => {
 
     const promise = await readLocalFileAsDataURL(event.target.files[0] as File);
 
-    expect(promise).toEqual("data:text/html;charset=undefined,Blob%20Ross");
+    expect(promise).toEqual('data:text/html;charset=undefined,Blob%20Ross');
   });
 });

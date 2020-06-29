@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IGenericTreeParams | algorithms</title>
+	<title>IEdge | algorithms</title>
 	<meta name="description" content="Documentation for algorithms">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="igenerictreeparams.html">IGenericTreeParams</a>
+					<a href="iedge.html">IEdge</a>
 				</li>
 			</ul>
-			<h1>Interface IGenericTreeParams&lt;T&gt;</h1>
+			<h1>Interface IEdge&lt;EdgeGeneric&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -68,7 +68,7 @@
 				<h3>Type parameters</h3>
 				<ul class="tsd-type-parameters">
 					<li>
-						<h4>T</h4>
+						<h4>EdgeGeneric</h4>
 					</li>
 				</ul>
 			</section>
@@ -76,7 +76,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IGenericTreeParams</span>
+						<span class="target">IEdge</span>
 					</li>
 				</ul>
 			</section>
@@ -87,9 +87,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igenerictreeparams.html#comparisonfunction" class="tsd-kind-icon">comparison<wbr>Function</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igenerictreeparams.html#initializewithdatafile" class="tsd-kind-icon">initialize<wbr>With<wbr>Data<wbr>File</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igenerictreeparams.html#numberofallowedchildrenpernode" class="tsd-kind-icon">number<wbr>OfAllowed<wbr>Children<wbr>Per<wbr>Node</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iedge.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iedge.html#payload" class="tsd-kind-icon">payload</a></li>
 							</ul>
 						</section>
 					</div>
@@ -98,32 +97,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="comparisonfunction" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> comparison<wbr>Function</h3>
-					<div class="tsd-signature tsd-kind-icon">comparison<wbr>Function<span class="tsd-signature-symbol">:</span> <a href="../globals.html#comparisonfunction" class="tsd-signature-type">ComparisonFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/mheuss/typescript-algorithms/blob/2cb6a3f/src/trees/base.ts#L10">trees/base.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/mheuss/typescript-algorithms/blob/2cb6a3f/src/graphs/undirected-adjacency-list/types.ts#L22">graphs/undirected-adjacency-list/types.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="initializewithdatafile" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> initialize<wbr>With<wbr>Data<wbr>File</h3>
-					<div class="tsd-signature tsd-kind-icon">initialize<wbr>With<wbr>Data<wbr>File<span class="tsd-signature-symbol">:</span> <a href="itreeobject.html" class="tsd-signature-type">ITreeObject</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="payload" class="tsd-anchor"></a>
+					<h3>payload</h3>
+					<div class="tsd-signature tsd-kind-icon">payload<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EdgeGeneric</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/mheuss/typescript-algorithms/blob/2cb6a3f/src/trees/base.ts#L12">trees/base.ts:12</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="numberofallowedchildrenpernode" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> number<wbr>OfAllowed<wbr>Children<wbr>Per<wbr>Node</h3>
-					<div class="tsd-signature tsd-kind-icon">number<wbr>OfAllowed<wbr>Children<wbr>Per<wbr>Node<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/mheuss/typescript-algorithms/blob/2cb6a3f/src/trees/base.ts#L11">trees/base.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/mheuss/typescript-algorithms/blob/2cb6a3f/src/graphs/undirected-adjacency-list/types.ts#L21">graphs/undirected-adjacency-list/types.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -142,16 +131,13 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-has-type-parameter">
-						<a href="igenerictreeparams.html" class="tsd-kind-icon">IGeneric<wbr>Tree<wbr>Params</a>
+						<a href="iedge.html" class="tsd-kind-icon">IEdge</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="igenerictreeparams.html#comparisonfunction" class="tsd-kind-icon">comparison<wbr>Function</a>
+								<a href="iedge.html#name" class="tsd-kind-icon">name</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="igenerictreeparams.html#initializewithdatafile" class="tsd-kind-icon">initialize<wbr>With<wbr>Data<wbr>File</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="igenerictreeparams.html#numberofallowedchildrenpernode" class="tsd-kind-icon">number<wbr>OfAllowed<wbr>Children<wbr>Per<wbr>Node</a>
+								<a href="iedge.html#payload" class="tsd-kind-icon">payload</a>
 							</li>
 						</ul>
 					</li>

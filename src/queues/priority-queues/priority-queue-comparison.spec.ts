@@ -35,15 +35,12 @@ describe('Priority Queue Comparison', () => {
     ).toEqual(Comparisons.Equal);
   });
 
-  it("Should throw if I provide it garbage", ()=>{
-    expect(()=>{
-      priorityQueueComparison(
-        { value: 'a', priority: 5 },
-        {
-          banana: 10,
-          value: 'b',
-        } as any
-      )}
-    ).toThrowErrorMatchingSnapshot();
-  })
+  it('Should throw if I provide it garbage', () => {
+    expect(() => {
+      priorityQueueComparison({ value: 'a', priority: 5 }, {
+        banana: 10,
+        value: 'b',
+      } as any);
+    }).toThrowErrorMatchingSnapshot();
+  });
 });

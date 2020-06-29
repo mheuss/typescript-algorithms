@@ -53,7 +53,7 @@ describe('Binary Search Tree Unit tests', () => {
 
     describe('Find tests', () => {
       it('Should return false for bad data ', () => {
-        expect(tree.find(null as any )).toBeFalsy();
+        expect(tree.find(null as any)).toBeFalsy();
       });
 
       it('Should find a value on the left', () => {
@@ -146,8 +146,10 @@ describe('Binary Search Tree Unit tests', () => {
     const tree = new BinarySearchTree<ITestObject>();
     it('Should fail a find when no comparator is present', () => {
       const MAHROOT = 'root';
-      tree[MAHROOT]={some:'test'} as any;
-      expect(()=>{tree.find({payload: 34})}).toThrowErrorMatchingSnapshot();
+      tree[MAHROOT] = { some: 'test' } as any;
+      expect(() => {
+        tree.find({ payload: 34 });
+      }).toThrowErrorMatchingSnapshot();
     });
   });
 });

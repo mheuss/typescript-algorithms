@@ -11,7 +11,7 @@ export async function readLocalTextFile(file: File): Promise<string> {
       const contents = fileReader.result;
       resolve(contents as string);
     };
-    fileReader.onerror = (e) => {
+    fileReader.onerror = e => {
       /* istanbul ignore next */
       reject(e);
     };

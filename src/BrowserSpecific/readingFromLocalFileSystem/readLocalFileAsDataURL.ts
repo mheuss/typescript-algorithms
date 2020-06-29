@@ -11,7 +11,7 @@ export async function readLocalFileAsDataURL(file: File): Promise<string> {
       const contents = imageFile.result;
       resolve(contents as string);
     };
-    imageFile.onerror = (e) => {
+    imageFile.onerror = e => {
       /* istanbul ignore next */
       reject(e);
     };
