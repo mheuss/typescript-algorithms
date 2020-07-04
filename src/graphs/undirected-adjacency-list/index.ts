@@ -1,7 +1,7 @@
 // Adjacency List - stores data in a list, indexed by the node
-import {ErrorCodes} from '../../constants';
-import {Queue} from '../../queues/fifo-queue';
-import {MinPriorityQueue} from "../../queues/priority-queues/min-priority-queue";
+import { ErrorCodes } from '../../constants';
+import { Queue } from '../../queues/fifo-queue';
+import { MinPriorityQueue } from '../../queues/priority-queues/min-priority-queue';
 import {
   IEdgeParameter,
   IVertexAndEdgeName,
@@ -112,7 +112,7 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
    */
   public addVertex = (name: string, payload?: VertexPayload) => {
     if (!this.vertices[name]) {
-      this.vertices[name] = {edges: {}, payload, name};
+      this.vertices[name] = { edges: {}, payload, name };
     }
   };
 
@@ -120,7 +120,7 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
    * Returns the object containing the vertex and edge data
    */
   public getAdjacencyList = () => {
-    return {...this.vertices};
+    return { ...this.vertices };
   };
 
   /**
@@ -128,17 +128,20 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
    * @param name
    */
   public getVertex = (name: string): VertexPayload | undefined => {
-    return this.vertices[name]?.payload
-  }
+    return this.vertices[name]?.payload;
+  };
 
   /**
    * Returns the edge payload between vertex a and vertex b
    * @param fromVertex
    * @param toVertex
    */
-  public getEdge = (fromVertex: string, toVertex: string): EdgePayload | undefined => {
+  public getEdge = (
+    fromVertex: string,
+    toVertex: string
+  ): EdgePayload | undefined => {
     return this.vertices[fromVertex]?.edges[toVertex]?.payload;
-  }
+  };
 
   /**
    * Returns all edges
@@ -149,7 +152,7 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
       return [];
     }
     return Object.keys(this.vertices[fromVertex]?.edges);
-  }
+  };
 
   /**
    * Remove an edge between two vertices
@@ -230,13 +233,20 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
     );
   };
 
-  public dijkstraShortestPath = (startingVertex: string, endingVertex: string, callback: ShortestPathCallback<VertexPayload, EdgePayload>): string[] => {
+  public dijkstraShortestPath = (
+    startingVertex: string,
+    endingVertex: string,
+    callback: ShortestPathCallback<VertexPayload, EdgePayload>
+  ): string[] => {
     const nodes = new MinPriorityQueue<string>();
     const weights: { [key: string]: number } = {};
     const previous: { [key: string]: string } = {};
 
-    if (this.vertices[startingVertex] === undefined || this.vertices[endingVertex] === undefined) {
-      throw {code: ErrorCodes.OPERATION_BEYOND_BOUNDS};
+    if (
+      this.vertices[startingVertex] === undefined ||
+      this.vertices[endingVertex] === undefined
+    ) {
+      throw { code: ErrorCodes.OPERATION_BEYOND_BOUNDS };
     }
 
     Object.keys(this.vertices).forEach((currentVertex: string) => {
@@ -261,13 +271,14 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
         }
 
         if (lightestVertex || weights[lightestVertex] !== Infinity) {
-          this.getEdges(lightestVertex).forEach((connectedVertex) => {
+          this.getEdges(lightestVertex).forEach(connectedVertex => {
             const connectedVertexPathWeight = callback({
               edge: this.vertices[lightestVertex].edges[connectedVertex],
               vertex: this.vertices[lightestVertex],
-            })
+            });
 
-            const candidate = weights[lightestVertex] + connectedVertexPathWeight;
+            const candidate =
+              weights[lightestVertex] + connectedVertexPathWeight;
             if (candidate < weights[connectedVertex]) {
               weights[connectedVertex] = candidate;
               previous[connectedVertex] = lightestVertex;
@@ -278,7 +289,7 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
       }
     }
     return [];
-  }
+  };
 
   private depthFirstTraversalHelper = (
     currentVertexName: string,
@@ -294,7 +305,7 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
         ? undefined
         : currentVertex.edges[incomingEdgeName];
 
-    callback({edge, vertex: currentVertex});
+    callback({ edge, vertex: currentVertex });
 
     const connectedVertices = Object.keys(currentVertex.edges);
 
@@ -325,11 +336,11 @@ export class UndirectedAdjacencyListGraph<VertexPayload, EdgePayload> {
         ? undefined
         : currentVertex.edges[incomingEdgeName];
 
-    callback({edge, vertex: currentVertex});
+    callback({ edge, vertex: currentVertex });
 
     Object.keys(currentVertex.edges).forEach(vertexName => {
       if (visited[vertexName] === undefined) {
-        queue.enqueue({vertexName, edgeName: currentVertexName});
+        queue.enqueue({ vertexName, edgeName: currentVertexName });
       }
     });
 
