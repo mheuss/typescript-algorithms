@@ -31,6 +31,15 @@ export type TraversalCallback<VertexGeneric, EdgeGeneric> = (
   vertexAndEdge: ITraversalPayload<VertexGeneric, EdgeGeneric>
 ) => void;
 
+export interface IShortestPathPayload<VertexGeneric, EdgeGeneric> {
+  edge: IEdge<EdgeGeneric>;
+  vertex: IVertex<VertexGeneric, EdgeGeneric>;
+}
+
+export type ShortestPathCallback<VertexGeneric, EdgeGeneric> = (
+  vertexAndEdge: IShortestPathPayload<VertexGeneric, EdgeGeneric>
+) => number;
+
 export interface IVisitedVertex {
   [key: string]: boolean;
 }

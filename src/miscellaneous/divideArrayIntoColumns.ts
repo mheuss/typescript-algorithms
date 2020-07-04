@@ -1,12 +1,12 @@
 /**
  * Takes a single array and returns it split into n arrays.
- * @param {Array<any>} incomingArray we want to split evenly as possible.
+ * @param {Array<T>} incomingArray we want to split evenly as possible.
  * @param {number} numberOfArrays Number of parts we want to split it into.
- * @returns {Array<Array<any>>} Array of arrays, with each sub array representing a split chunk.
+ * @returns {Array<Array<T>>} Array of arrays, with each sub array representing a split chunk.
  */
 
-export function divideArrayIntoColumns(
-  incomingArray: any[],
+export function divideArrayIntoColumns<T>(
+  incomingArray: T[],
   numberOfArrays: number
 ) {
   if (numberOfArrays < 2) {
@@ -14,7 +14,7 @@ export function divideArrayIntoColumns(
   }
 
   const lengthOfArray = incomingArray.length;
-  const outputArray: any[] = [];
+  const outputArray: T[][] = [];
   let eachChunk;
   let currentIncrement = 0;
 

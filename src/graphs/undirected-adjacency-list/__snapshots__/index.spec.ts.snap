@@ -122,4 +122,8 @@ exports[`Traversal Should not do a Depth First Traversal if we do not give it a 
 
 exports[`Undirected Adjacency Graph Unit tests Add edges Should throw if we try to add to a non existent vertex 1`] = `"One or both of these vertices don't exist Point A / Point C"`;
 
+exports[`Undirected Adjacency Graph Unit tests Dijkstra's Shortest Path Should throw if given nonexistant vertices 1`] = `undefined`;
+
+exports[`Undirected Adjacency Graph Unit tests Dijkstra's Shortest Path Should throw if given nonexistant vertices 2`] = `undefined`;
+
 exports[`Undirected Adjacency Graph Unit tests Should throw if we try to add to a non existent vertex 1`] = `"One or both of these vertices don't exist Point C / Point B"`;
