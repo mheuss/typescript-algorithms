@@ -26,3 +26,4 @@ export * from './stacks/undo-redo';
 export * from './stacks/generic';
 export * from './stacks/undo-redo';
 export * from './trees/binary-search-tree';
+export * from './colors';

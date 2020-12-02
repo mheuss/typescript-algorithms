@@ -12,6 +12,7 @@ were sufficient.
 Included here are:
 
   - Bit Manipulation
+  - Color Manipulation
   - Divide Array Into Approximately Equal Sized Arrays
   - Graphs (Undirected Adjacency)
   - Heaps (Min, Max Binary and D*ry)
