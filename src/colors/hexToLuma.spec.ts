@@ -11,16 +11,16 @@ describe('Test of hexToLuma', () => {
         expect(results).toEqual(1)
     })
 
-    it('Should return black when light gray', () => {
+    it('Should return a medium value when given a medium gray', () => {
         expect(hexToLuma('#797979').toFixed(3)).toEqual('0.475');
 
     })
 
-    it('Should return black when light red', () => {
+    it('Should return a bright value when light red', () => {
         expect(hexToLuma('#FFAAAA').toFixed(3)).toEqual('0.766')
     })
 
-    it('Should return white when given a dark blue', () => {
+    it('Should return less bright value when given a dark blue', () => {
         expect(hexToLuma('#222266').toFixed(3)).toEqual('0.164')
     })
 })
