@@ -7,7 +7,7 @@
 import {hexToLuma} from "./hexToLuma";
 
 export function colorShade(rgbString: string, brightness: number) {
-    if (!rgbString.length || rgbString.length < 6 || rgbString.length > 7) {
+    if (!rgbString?.length || rgbString.length < 6 || rgbString.length > 7) {
         return rgbString;
     }
 
