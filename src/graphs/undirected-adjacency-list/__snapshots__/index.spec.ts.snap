@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Removal Should remove a vertex 1`] = `
-Object {
-  "Point B": Object {
-    "edges": Object {
-      "Point C": Object {
+{
+  "Point B": {
+    "edges": {
+      "Point C": {
         "name": "Point C",
         "payload": true,
       },
-      "Point D": Object {
+      "Point D": {
         "name": "Point D",
         "payload": true,
       },
@@ -16,9 +16,9 @@ Object {
     "name": "Point B",
     "payload": true,
   },
-  "Point C": Object {
-    "edges": Object {
-      "Point B": Object {
+  "Point C": {
+    "edges": {
+      "Point B": {
         "name": "Point B",
         "payload": false,
       },
@@ -26,9 +26,9 @@ Object {
     "name": "Point C",
     "payload": false,
   },
-  "Point D": Object {
-    "edges": Object {
-      "Point B": Object {
+  "Point D": {
+    "edges": {
+      "Point B": {
         "name": "Point B",
         "payload": false,
       },
@@ -40,10 +40,10 @@ Object {
 `;
 
 exports[`Removal should remove an edge 1`] = `
-Object {
-  "Point A": Object {
-    "edges": Object {
-      "Point C": Object {
+{
+  "Point A": {
+    "edges": {
+      "Point C": {
         "name": "Point C",
         "payload": true,
       },
@@ -51,13 +51,13 @@ Object {
     "name": "Point A",
     "payload": true,
   },
-  "Point B": Object {
-    "edges": Object {
-      "Point C": Object {
+  "Point B": {
+    "edges": {
+      "Point C": {
         "name": "Point C",
         "payload": true,
       },
-      "Point D": Object {
+      "Point D": {
         "name": "Point D",
         "payload": true,
       },
@@ -65,13 +65,13 @@ Object {
     "name": "Point B",
     "payload": true,
   },
-  "Point C": Object {
-    "edges": Object {
-      "Point A": Object {
+  "Point C": {
+    "edges": {
+      "Point A": {
         "name": "Point A",
         "payload": false,
       },
-      "Point B": Object {
+      "Point B": {
         "name": "Point B",
         "payload": false,
       },
@@ -79,9 +79,9 @@ Object {
     "name": "Point C",
     "payload": false,
   },
-  "Point D": Object {
-    "edges": Object {
-      "Point B": Object {
+  "Point D": {
+    "edges": {
+      "Point B": {
         "name": "Point B",
         "payload": false,
       },
@@ -93,7 +93,7 @@ Object {
 `;
 
 exports[`Traversal Should do a Breadth First Traversal 1`] = `
-Array [
+[
   "We are at Maine",
   "We are at New Hampshire and we came from Maine",
   "We are at Massachusetts and we came from New Hampshire",
@@ -105,7 +105,7 @@ Array [
 `;
 
 exports[`Traversal Should do a Depth First Traversal 1`] = `
-Array [
+[
   "We are at Maine",
   "We are at New Hampshire and we came from Maine",
   "We are at Massachusetts and we came from New Hampshire",

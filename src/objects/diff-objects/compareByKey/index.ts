@@ -1,4 +1,4 @@
-import { ICompareByKey } from './type';
+import { ICompareByKey } from "./type";
 
 /**
  * When given two different arrays of objects, one original, one new, this class will tell you what was
@@ -22,7 +22,7 @@ export class CompareByKey<T> {
     const keysFromOriginal = Object.keys(this.originalObject);
     const dataNoLongerInFile: T[] = [];
 
-    keysFromOriginal.forEach(property => {
+    keysFromOriginal.forEach((property) => {
       if (this.newObject[property] === undefined) {
         dataNoLongerInFile.push(this.originalObject[property]);
       }
@@ -39,7 +39,7 @@ export class CompareByKey<T> {
     const keysFromNew = Object.keys(this.newObject);
     const newDataInFile: T[] = [];
 
-    keysFromNew.forEach(property => {
+    keysFromNew.forEach((property) => {
       if (this.originalObject[property] === undefined) {
         newDataInFile.push(this.newObject[property]);
       }
@@ -50,11 +50,11 @@ export class CompareByKey<T> {
 
   protected mapObject(data: T[], keyName: keyof T): ICompareByKey<T> {
     const transformedFile: ICompareByKey<T> = {};
-    const keyAsString = `${keyName}` as keyof T;
+    const keyAsString = `${keyName as string}` as keyof T;
 
-    data.forEach(lineItem => {
+    data.forEach((lineItem) => {
       if (lineItem[keyAsString] === undefined) {
-        throw { message: 'You cannot have an undefined key name' };
+        throw { message: "You cannot have an undefined key name" };
       }
 
       if (transformedFile[`${lineItem[keyAsString]}`] !== undefined) {

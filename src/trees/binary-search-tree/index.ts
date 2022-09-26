@@ -1,7 +1,7 @@
-import { ComparisonFunction, Comparisons } from '../../comparisons/constants';
-import { GenericTree } from '../base';
-import { Sides } from './constants';
-import { Node } from './node';
+import { ComparisonFunction, Comparisons } from "../../comparisons/constants";
+import { GenericTree } from "../base";
+import { Sides } from "./constants";
+import { Node } from "./node";
 
 /**
  * Binary search tree implementation.
@@ -87,9 +87,8 @@ export class BinarySearchTree<T> extends GenericTree<T> {
    */
   public insert = (incomingValue: T): BinarySearchTree<T> => {
     if (this.comparisonFunction === undefined) {
-      this.comparisonFunction = BinarySearchTree.SelectComparisonFunction<T>(
-        incomingValue
-      );
+      this.comparisonFunction =
+        BinarySearchTree.SelectComparisonFunction<T>(incomingValue);
     }
 
     if (this.root === null) {
@@ -125,9 +124,8 @@ export class BinarySearchTree<T> extends GenericTree<T> {
     }
 
     if (this.comparisonFunction === undefined) {
-      this.comparisonFunction = BinarySearchTree.SelectComparisonFunction<T>(
-        target
-      );
+      this.comparisonFunction =
+        BinarySearchTree.SelectComparisonFunction<T>(target);
     }
 
     return BinarySearchTree.recursiveFind<T>(

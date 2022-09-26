@@ -1,1 +1,1 @@
-export {hexToLuma} from './hexToLuma';
+export { hexToLuma } from "./hexToLuma";

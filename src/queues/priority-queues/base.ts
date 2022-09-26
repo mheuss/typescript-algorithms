@@ -1,6 +1,6 @@
-import { MaxBinaryHeap } from '../../heaps/max-binary-heap';
-import { MinBinaryHeap } from '../../heaps/min-binary-heap';
-import { PriorityQueueNode } from './priority-queue-node';
+import { MaxBinaryHeap } from "../../heaps/max-binary-heap";
+import { MinBinaryHeap } from "../../heaps/min-binary-heap";
+import { PriorityQueueNode } from "./priority-queue-node";
 
 export class BasePriorityQueue<T> {
   protected heap: MaxBinaryHeap<PriorityQueueNode<T>>;

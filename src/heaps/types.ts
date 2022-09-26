@@ -1,4 +1,4 @@
-import { ComparisonFunction, Comparisons } from '../comparisons/constants';
+import { ComparisonFunction, Comparisons } from "../comparisons/constants";
 
 export interface IBaseHeapParameters<T> {
   minOrMax: Comparisons.GreaterThan | Comparisons.LessThan;
@@ -8,5 +8,5 @@ export interface IBaseHeapParameters<T> {
 
 export type IMaxDAryHeapParameters<T> = Omit<
   IBaseHeapParameters<T>,
-  'minOrMax'
+  "minOrMax"
 >;

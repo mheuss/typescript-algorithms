@@ -1,4 +1,4 @@
-import { ErrorCodes } from '../constants';
+import { ErrorCodes } from "../constants";
 // tslint:disable:no-bitwise
 
 export class BitMasks {
@@ -10,7 +10,7 @@ export class BitMasks {
    */
   constructor(initialMaskValue: number | string) {
     this.mask =
-      typeof initialMaskValue === 'string'
+      typeof initialMaskValue === "string"
         ? parseInt(initialMaskValue, 2)
         : initialMaskValue;
   }
@@ -68,11 +68,8 @@ export class BitMasks {
    * @returns {number} Position of the rightmost bit that is turned on.
    */
   public lowBit = (): number => {
-    const bitAsString = this.toString()
-      .split('')
-      .reverse()
-      .join('');
-    return bitAsString.indexOf('1');
+    const bitAsString = this.toString().split("").reverse().join("");
+    return bitAsString.indexOf("1");
   };
 
   /**
@@ -90,15 +87,12 @@ export class BitMasks {
    * @returns {object} hashMap of bits
    */
   public integerValuesOfSetBits = (): number[] => {
-    const stringRepresentation = this.toString()
-      .split('')
-      .reverse()
-      .join('');
+    const stringRepresentation = this.toString().split("").reverse().join("");
 
     const output: number[] = [];
 
     for (let bit = 0; bit < stringRepresentation.length; bit++) {
-      if (stringRepresentation[bit] === '1') {
+      if (stringRepresentation[bit] === "1") {
         output.push(Math.pow(2, bit));
       }
     }

@@ -1,6 +1,6 @@
-import { ComparisonFunction } from '../../comparisons/constants';
-import { MinBinaryHeap } from '../../heaps/min-binary-heap';
-import { SingleLinkedList } from '../../linked-lists/single-linked-list';
+import { ComparisonFunction } from "../../comparisons/constants";
+import { MinBinaryHeap } from "../../heaps/min-binary-heap";
+import { SingleLinkedList } from "../../linked-lists/single-linked-list";
 
 /**
  * Heap sort.

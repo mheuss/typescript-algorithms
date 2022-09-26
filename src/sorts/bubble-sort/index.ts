@@ -1,7 +1,7 @@
-import { cloneDeep } from 'lodash';
-import { SelectComparisonFunction } from '../../comparisons';
-import { Comparisons } from '../../comparisons/constants';
-import { ComparisonFunction } from '../types';
+import { cloneDeep } from "lodash";
+import { SelectComparisonFunction } from "../../comparisons";
+import { Comparisons } from "../../comparisons/constants";
+import { ComparisonFunction } from "../types";
 
 function BubbleSortPass<T>(
   arrayOfSomething: T[],
@@ -56,7 +56,7 @@ export function BubbleSort<T>(
   do {
     countOfChanges = BubbleSortPass(
       clonedArray,
-      sortMechanismToBePassedIntoHelper!
+      sortMechanismToBePassedIntoHelper
     );
   } while (countOfChanges !== 0);
 

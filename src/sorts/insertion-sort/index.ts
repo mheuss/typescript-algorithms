@@ -1,7 +1,7 @@
-import { cloneDeep } from 'lodash';
-import { SelectComparisonFunction } from '../../comparisons';
-import { Comparisons } from '../../comparisons/constants';
-import { ComparisonFunction } from '../types';
+import { cloneDeep } from "lodash";
+import { SelectComparisonFunction } from "../../comparisons";
+import { Comparisons } from "../../comparisons/constants";
+import { ComparisonFunction } from "../types";
 
 function countDown<T>(
   arr: T[],
@@ -46,7 +46,7 @@ export function InsertionSort<T>(
     countDown(
       clonedArray,
       leftToRightCounter,
-      sortMechanismToBePassedIntoHelper!
+      sortMechanismToBePassedIntoHelper
     );
   }
 

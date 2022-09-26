@@ -1,4 +1,4 @@
-import { readLocalFileAsDataURL } from './readLocalFileAsDataURL';
+import { readLocalFileAsDataURL } from "./readLocalFileAsDataURL";
 
 const compressionStrength = 0.3;
 
@@ -18,7 +18,7 @@ export async function readLocalFileAndOrientImage(options: IOptions) {
   const file = options.file;
   const compressionFlag = doIBeCompressing(options);
 
-  const orientation: number = await new Promise(resolve => {
+  const orientation: number = await new Promise((resolve) => {
     const callback = (result: number) => {
       resolve(result);
     };
@@ -35,7 +35,7 @@ export async function readLocalFileAndOrientImage(options: IOptions) {
     return dataURL;
   }
 
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     const callback = (result: string) => {
       resolve(result);
     };
@@ -58,12 +58,12 @@ export async function readLocalFileAndOrientImage(options: IOptions) {
 function getOrientation(file: File, callback: (result: number) => void) {
   const reader = new FileReader();
 
-  reader.onload = (e: any) => {
+  reader.onload = (e: ProgressEvent<FileReader>) => {
     if (e === null || e.target === null) {
       return;
     }
 
-    const view = new DataView(e.target.result);
+    const view = new DataView(<ArrayBuffer>e.target.result);
     // If it aint a jpeg, we be gone
     if (view.getUint16(0, false) !== 0xffd8) {
       return callback(-2);
@@ -117,8 +117,8 @@ function resetOrientation(
   img.onload = () => {
     const width = img.width;
     const height = img.height;
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
 
     // If we can't get a context, let's leave with what we came in with.
     if (ctx === null) {
@@ -170,7 +170,7 @@ function resetOrientation(
     ctx.drawImage(img, 0, 0);
 
     // export base64
-    callback(canvas.toDataURL('image/jpeg', compressionStrength));
+    callback(canvas.toDataURL("image/jpeg", compressionStrength));
   };
 
   img.src = srcBase64;

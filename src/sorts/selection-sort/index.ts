@@ -1,7 +1,7 @@
-import { cloneDeep } from 'lodash';
-import { SelectComparisonFunction } from '../../comparisons';
-import { Comparisons } from '../../comparisons/constants';
-import { ComparisonFunction } from '../types';
+import { cloneDeep } from "lodash";
+import { SelectComparisonFunction } from "../../comparisons";
+import { Comparisons } from "../../comparisons/constants";
+import { ComparisonFunction } from "../types";
 
 function FindSmallest<T>(
   target: number,
@@ -43,7 +43,7 @@ export function SelectionSort<T>(
   );
 
   for (let counter = 0; counter < clonedArray.length; counter++) {
-    FindSmallest<T>(counter, clonedArray, sortMechanismToBePassedIntoHelper!);
+    FindSmallest<T>(counter, clonedArray, sortMechanismToBePassedIntoHelper);
   }
   return clonedArray;
 }

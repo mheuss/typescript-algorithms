@@ -1,6 +1,6 @@
 class RadixSort {
   private workingArray: number[] = [];
-  private maximumNumberOfDigits: number = 0;
+  private maximumNumberOfDigits = 0;
 
   public go = (incomingArray: number[]) => {
     this.workingArray = incomingArray;

@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Queue Should allow us to enqueue an item 1`] = `
-Array [
+[
   2,
 ]
 `;
 
 exports[`Queue Should load an array of items 1`] = `
-Array [
+[
   1,
   2,
   3,
