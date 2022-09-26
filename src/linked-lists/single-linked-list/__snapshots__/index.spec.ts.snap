@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Single Linked List Unit Tests Insert Should insert a node at the end 1`] = `
-Array [
+[
   1,
   2,
   3,
@@ -16,13 +16,13 @@ Array [
 `;
 
 exports[`Single Linked List Unit Tests Insert Should insert a node in the beginning if the list length was zero 1`] = `
-Array [
+[
   6,
 ]
 `;
 
 exports[`Single Linked List Unit Tests Insert Should insert a node in the middle 1`] = `
-Array [
+[
   1,
   2,
   3,

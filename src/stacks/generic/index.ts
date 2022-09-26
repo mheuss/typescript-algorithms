@@ -1,4 +1,4 @@
-import { SingleLinkedList } from '../../linked-lists/single-linked-list';
+import { SingleLinkedList } from "../../linked-lists/single-linked-list";
 
 /**
  * Generic stack implementation.
@@ -53,7 +53,7 @@ export class Stack<T> {
    * @param incomingArray
    */
   public load = (incomingArray: T[]): number => {
-    incomingArray.reverse().forEach(item => {
+    incomingArray.reverse().forEach((item) => {
       this.put(item);
     });
 

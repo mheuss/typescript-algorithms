@@ -1,5 +1,5 @@
-import { ErrorCodes } from '../constants';
-import { Comparisons } from './constants';
+import { ErrorCodes } from "../constants";
+import { Comparisons } from "./constants";
 
 /**
  * Simple string comparison function that makes use of string.localeCompare

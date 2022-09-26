@@ -1,7 +1,7 @@
-import { cloneDeep } from 'lodash';
-import { SelectComparisonFunction } from '../../comparisons';
-import { Comparisons } from '../../comparisons/constants';
-import { ComparisonFunction } from '../types';
+import { cloneDeep } from "lodash";
+import { SelectComparisonFunction } from "../../comparisons";
+import { Comparisons } from "../../comparisons/constants";
+import { ComparisonFunction } from "../types";
 
 function merge<T>(
   leftArray: T[],
@@ -10,8 +10,8 @@ function merge<T>(
 ): T[] {
   const results: T[] = [];
 
-  let leftCounter: number = 0;
-  let rightCounter: number = 0;
+  let leftCounter = 0;
+  let rightCounter = 0;
 
   while (leftCounter < leftArray.length && rightCounter < rightArray.length) {
     if (

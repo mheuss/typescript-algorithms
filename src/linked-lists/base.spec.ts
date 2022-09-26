@@ -1,22 +1,23 @@
-import { ErrorCodes } from '../constants';
-import { LinkedList } from './base';
-import { ListNode } from './single-linked-list/list-node';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { ErrorCodes } from "../constants";
+import { LinkedList } from "./base";
+import { ListNode } from "./single-linked-list/list-node";
 
-const HEAD = 'head';
-const TAIL = 'tail';
-const LENGTH = 'length';
+const HEAD = "head";
+const TAIL = "tail";
+const LENGTH = "length";
 
-describe('Linked List unit tests', () => {
-  describe('Get Length', () => {
-    it('Should return the list length', () => {
+describe("Linked List unit tests", () => {
+  describe("Get Length", () => {
+    it("Should return the list length", () => {
       const list = new LinkedList<number>();
       list[LENGTH] = 2;
       expect(list.getLength()).toEqual(2);
     });
   });
 
-  describe('Empty', () => {
-    it('Should empty a list', () => {
+  describe("Empty", () => {
+    it("Should empty a list", () => {
       const list = new LinkedList<number>();
       list[HEAD] = constructNodeList([1, 2, 3]);
       list.empty();
@@ -26,13 +27,13 @@ describe('Linked List unit tests', () => {
     });
   });
 
-  describe('toArray', () => {
-    it('Should return an empty array if given an empty list', () => {
+  describe("toArray", () => {
+    it("Should return an empty array if given an empty list", () => {
       const list = new LinkedList<number>();
       expect(list.toArray()).toEqual([]);
     });
 
-    it('Should return a list as an array', () => {
+    it("Should return a list as an array", () => {
       const list = new LinkedList<number>();
 
       list[HEAD] = constructNodeList([1, 2, 3, 4, 5, 6, 7, 8, 9]);
@@ -40,147 +41,152 @@ describe('Linked List unit tests', () => {
     });
   });
 
-  describe('findFirst', () => {
-    it('Should return undefined with empty list', () => {
+  describe("findFirst", () => {
+    it("Should return undefined with empty list", () => {
       const list = new LinkedList<number>();
-      expect(list.findFirst(value => value === 7)).toBeUndefined();
+      expect(list.findFirst((value) => value === 7)).toBeUndefined();
     });
 
     it("Should return undefined if it can't find nuffin", () => {
       const list = new LinkedList<number>();
       list[HEAD] = constructNodeList([1, 2, 3, 4, 5, 6, 7]);
-      expect(list.findFirst(value => value === 32)).toBeUndefined();
+      expect(list.findFirst((value) => value === 32)).toBeUndefined();
     });
 
-    it('Should return value if it matches - string', () => {
+    it("Should return value if it matches - string", () => {
       const list = new LinkedList<string>();
-      list[HEAD] = constructNodeList(['apple', 'pear', 'orange', 'banana']);
-      expect(list.findFirst(value => value === 'pear')).toMatchObject({
+      list[HEAD] = constructNodeList(["apple", "pear", "orange", "banana"]);
+      expect(list.findFirst((value) => value === "pear")).toMatchObject({
         index: 1,
-        value: 'pear',
+        value: "pear",
       });
     });
 
-    it('should return value if it matches, object', () => {
+    it("should return value if it matches, object", () => {
       const list = new LinkedList<any>();
       list[HEAD] = constructNodeList([
-        { firstName: 'Mike' },
-        { firstName: 'Bob' },
-        { firstName: 'Jim' },
-        { firstName: 'Ahtasham' },
-        { firstName: 'Nigel' },
+        { firstName: "Mike" },
+        { firstName: "Bob" },
+        { firstName: "Jim" },
+        { firstName: "Ahtasham" },
+        { firstName: "Nigel" },
       ]);
-      expect(list.findFirst(value => value.firstName === 'Jim')).toMatchObject({
+      expect(
+        list.findFirst((value) => value.firstName === "Jim")
+      ).toMatchObject({
         index: 2,
-        value: { firstName: 'Jim' },
+        value: { firstName: "Jim" },
       });
     });
 
-    it('Should return value if it matches, number, end of list', () => {
+    it("Should return value if it matches, number, end of list", () => {
       const list = new LinkedList<number>();
       list[HEAD] = constructNodeList([1, 2, 3, 4, 5, 6, 7]);
-      expect(list.findFirst(value => value === 7)).toMatchObject({
+      expect(list.findFirst((value) => value === 7)).toMatchObject({
         index: 6,
         value: 7,
       });
     });
 
-    it('Should return value if it matches, number, beginning of list', () => {
+    it("Should return value if it matches, number, beginning of list", () => {
       const list = new LinkedList<number>();
       list[HEAD] = constructNodeList([1, 2, 3, 4, 5, 6, 7]);
-      expect(list.findFirst(value => value < 2)).toMatchObject({
+      expect(list.findFirst((value) => value < 2)).toMatchObject({
         index: 0,
         value: 1,
       });
     });
   });
 
-  describe('findAll', () => {
-    it('Should return undefined with empty list', () => {
+  describe("findAll", () => {
+    it("Should return undefined with empty list", () => {
       const list = new LinkedList<number>();
-      expect(list.findAll(value => value === 7)).toEqual([]);
+      expect(list.findAll((value) => value === 7)).toEqual([]);
     });
 
     it("Should return undefined if it can't find nuffin", () => {
       const list = new LinkedList<number>();
       list[HEAD] = constructNodeList([1, 2, 3, 4, 5, 6, 7]);
-      expect(list.findAll(value => value === 32)).toEqual([]);
+      expect(list.findAll((value) => value === 32)).toEqual([]);
     });
 
-    it('Should return value if it matches - string', () => {
+    it("Should return value if it matches - string", () => {
       const list = new LinkedList<string>();
-      list[HEAD] = constructNodeList(['apple', 'pear', 'orange', 'banana']);
-      expect(list.findAll(value => value === 'pear')).toMatchObject([
-        { index: 1, value: 'pear' },
+      list[HEAD] = constructNodeList(["apple", "pear", "orange", "banana"]);
+      expect(list.findAll((value) => value === "pear")).toMatchObject([
+        { index: 1, value: "pear" },
       ]);
     });
 
-    it('should return value if it matches, object', () => {
+    it("should return value if it matches, object", () => {
       const list = new LinkedList<any>();
       list[HEAD] = constructNodeList([
-        { firstName: 'Mike' },
-        { firstName: 'Bob' },
-        { firstName: 'Jim' },
-        { firstName: 'Ahtasham' },
-        { firstName: 'Nigel' },
+        { firstName: "Mike" },
+        { firstName: "Bob" },
+        { firstName: "Jim" },
+        { firstName: "Ahtasham" },
+        { firstName: "Nigel" },
       ]);
-      expect(list.findAll(value => value.firstName.length === 3)).toMatchObject(
+      expect(
+        list.findAll((value) => value.firstName.length === 3)
+      ).toMatchObject([
+        { index: 1, value: { firstName: "Bob" } },
+        { index: 2, value: { firstName: "Jim" } },
+      ]);
+    });
+
+    it("Should return value if it matches, number, end of list", () => {
+      const list = new LinkedList<number>();
+      list[HEAD] = constructNodeList([1, 2, 3, 4, 5, 6, 7]);
+      expect(list.findAll((value) => value === 7 || value === 3)).toMatchObject(
         [
-          { index: 1, value: { firstName: 'Bob' } },
-          { index: 2, value: { firstName: 'Jim' } },
+          { index: 2, value: 3 },
+          { index: 6, value: 7 },
         ]
       );
     });
 
-    it('Should return value if it matches, number, end of list', () => {
+    it("Should return value if it matches, number, beginning of list", () => {
       const list = new LinkedList<number>();
       list[HEAD] = constructNodeList([1, 2, 3, 4, 5, 6, 7]);
-      expect(list.findAll(value => value === 7 || value === 3)).toMatchObject([
-        { index: 2, value: 3 },
-        { index: 6, value: 7 },
-      ]);
-    });
-
-    it('Should return value if it matches, number, beginning of list', () => {
-      const list = new LinkedList<number>();
-      list[HEAD] = constructNodeList([1, 2, 3, 4, 5, 6, 7]);
-      expect(list.findAll(value => value < 2)).toMatchObject([
+      expect(list.findAll((value) => value < 2)).toMatchObject([
         { index: 0, value: 1 },
       ]);
     });
   });
 
-  describe('Get', () => {
-    it('Should return undefined if we are beyond the upper bounds ', () => {
+  describe("Get", () => {
+    it("Should return undefined if we are beyond the upper bounds ", () => {
       const list = new LinkedList<number>();
       list[HEAD] = constructNodeList([1, 2, 3, 4, 5, 6, 7, 8, 9]);
       list[LENGTH] = 9;
       expect(list.get(300)).toBeUndefined();
     });
 
-    it('Should return the value without entering the loop if index be all zero ', () => {
+    it("Should return the value without entering the loop if index be all zero ", () => {
       const list = new LinkedList<number>();
       list[HEAD] = constructNodeList([1, 2, 3, 4, 5, 6, 7, 8, 9]);
       list[LENGTH] = 9;
       expect(list.get(0)).toEqual(1);
     });
 
-    it('Should throw if the list is internally broken ', () => {
+    it("Should throw if the list is internally broken ", () => {
       const list = new LinkedList<number>();
       list[HEAD] = constructNodeList([1, 2, 3, 4, 5, 6, 7, 8, 9]);
       list[LENGTH] = 9;
-      // @ts-ignore
+      // @ts-expect-error Not worrying about types in unit test
       list[HEAD]?.next?.next = null;
 
       try {
         list.get(8);
-        fail('Should have thrown');
+        fail("Should have thrown");
       } catch (e) {
+        // @ts-expect-error Not worrying about types in unit test
         expect(e.code).toEqual(ErrorCodes.LIST_IS_BROKEN_INTERNALLY);
       }
     });
 
-    it('Should return the proper value ', () => {
+    it("Should return the proper value ", () => {
       const list = new LinkedList<number>();
       list[HEAD] = constructNodeList([1, 2, 3, 4, 5, 6, 7, 8, 9]);
       list[LENGTH] = 9;
@@ -190,31 +196,33 @@ describe('Linked List unit tests', () => {
     });
   });
 
-  describe('Set', () => {
-    it('Should return false when told to set beyond bounds', () => {
+  describe("Set", () => {
+    it("Should return false when told to set beyond bounds", () => {
       const list = new LinkedList<number>();
       const arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
       list[HEAD] = constructNodeList(arr);
       list[LENGTH] = 9;
       try {
         list.set(100, 7);
-        fail('Should have thrown');
+        fail("Should have thrown");
       } catch (e) {
+        // @ts-expect-error Not worrying about types in unit test
         expect(e.code).toEqual(ErrorCodes.FAILED_TO_SET);
       }
     });
 
-    it('should return false when told to set on an empty list', () => {
+    it("should return false when told to set on an empty list", () => {
       const list = new LinkedList<number>();
       try {
         list.set(100, 7);
-        fail('Should have thrown');
+        fail("Should have thrown");
       } catch (e) {
+        // @ts-expect-error Not worrying about types in unit test
         expect(e.code).toEqual(ErrorCodes.FAILED_TO_SET);
       }
     });
 
-    it('Should successfully set at a given point', () => {
+    it("Should successfully set at a given point", () => {
       const list = new LinkedList<number>();
       const arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
       list[HEAD] = constructNodeList(arr);

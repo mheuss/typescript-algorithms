@@ -6,7 +6,7 @@ import {
   keys,
   omit,
   reduce,
-} from 'lodash';
+} from "lodash";
 
 interface IObjectMerge<T> {
   changedObject: T;
@@ -20,21 +20,21 @@ interface IObjectMerge<T> {
  * party, this function will extract only the changed properties from the stale object and the user changed object,
  * and then merge just those changes on top of the fresh object.
  *
- * @param {IObjectMerge<T>} collection Object that contains the initialObject, the freshObject and the Changed object.
- * @returns {T} Object with most recent values from all three objects.
+ * @param {IObjectMerge} collection Object that contains the initialObject, the freshObject and the Changed object.
+ * @returns  Object with most recent values from all three objects.
  */
 export default function threeWayObjectMerge<T extends object>(
   collection: IObjectMerge<T>
 ): T {
   const { changedObject, freshObject, initialObject } = collection;
 
-  const finalObject = cloneDeep(freshObject);
+  const finalObject: T = cloneDeep(freshObject);
 
   const diffOfObjects = diffDeep(initialObject, changedObject);
 
   for (const property in diffOfObjects) {
     if (property !== undefined) {
-      // @ts-ignore
+      // @ts-expect-error - The object's properties are generic.
       finalObject[property] = diffOfObjects[property] as T[keyof T];
     }
   }
@@ -42,6 +42,7 @@ export default function threeWayObjectMerge<T extends object>(
   return finalObject;
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * When given two objects, one descended from the other, return a new object that only contains the changed properties between the two.
  * @param sourceObject Contains the source object, without changes. We don't want the unchanged values.
@@ -84,3 +85,5 @@ export function diffDeep(
     omit(derivedObject, keys(sourceObject))
   );
 }
+
+/* eslint-enable @typescript-eslint/no-explicit-any */

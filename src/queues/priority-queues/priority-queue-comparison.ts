@@ -1,6 +1,6 @@
-import { Comparisons } from '../../comparisons/constants';
-import { ErrorCodes } from '../../constants';
-import { PriorityQueueNode } from './priority-queue-node';
+import { Comparisons } from "../../comparisons/constants";
+import { ErrorCodes } from "../../constants";
+import { PriorityQueueNode } from "./priority-queue-node";
 
 export function priorityQueueComparison<T>(
   a: PriorityQueueNode<T>,

@@ -1,5 +1,5 @@
-import { ComparisonFunction } from '../../comparisons/constants';
-import { MaxDAryHeap } from '../max-d-ary-heap';
+import { ComparisonFunction } from "../../comparisons/constants";
+import { MaxDAryHeap } from "../max-d-ary-heap";
 
 /**
  * Implementation of a max binary heap.

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test of Generic Stack Should be able to export an array and load it back in with the same order 1`] = `
-Array [
+[
   7,
   6,
   5,
@@ -61,7 +61,7 @@ SingleLinkedList {
 `;
 
 exports[`Test of Generic Stack Should be able to push items on it 1`] = `
-Array [
+[
   7,
   6,
   5,

@@ -1,6 +1,6 @@
-import { ErrorCodes } from '../../constants';
-import { LinkedList } from '../base';
-import { ListNode } from './list-node';
+import { ErrorCodes } from "../../constants";
+import { LinkedList } from "../base";
+import { ListNode } from "./list-node";
 
 /**
  * Single linked list implementation.
@@ -17,7 +17,7 @@ export class SingleLinkedList<T> extends LinkedList<T> {
     if (index < 0 || index >= this.length) {
       throw {
         code: ErrorCodes.OPERATION_BEYOND_BOUNDS,
-        message: 'Index is out of bounds',
+        message: "Index is out of bounds",
       };
     }
 
@@ -32,7 +32,7 @@ export class SingleLinkedList<T> extends LinkedList<T> {
     if (node === null) {
       throw {
         code: ErrorCodes.OPERATION_BEYOND_BOUNDS,
-        message: 'Index is out of bounds',
+        message: "Index is out of bounds",
       };
     }
 
@@ -71,7 +71,7 @@ export class SingleLinkedList<T> extends LinkedList<T> {
     if (!preObject) {
       throw {
         code: ErrorCodes.OPERATION_BEYOND_BOUNDS,
-        message: 'Operation beyond bounds',
+        message: "Operation beyond bounds",
       };
     }
 
@@ -160,7 +160,7 @@ export class SingleLinkedList<T> extends LinkedList<T> {
    * @returns The current SingleLinkedList instance
    */
   public pushArray = (newItem: T[]) => {
-    newItem.forEach(item => {
+    newItem.forEach((item) => {
       this.push(item);
     });
 

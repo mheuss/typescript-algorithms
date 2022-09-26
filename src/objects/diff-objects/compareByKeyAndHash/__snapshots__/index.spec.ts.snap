@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`compareByKey unit tests Hash map creation test Should correctly map the files 1`] = `
-Object {
-  "145543598": Object {
+{
+  "145543598": {
     "bank_name": "Phillipe",
     "city": "Largo",
     "hash": "2e767915b4e52a44dc2afb128da162f34ce47168",
@@ -10,7 +10,7 @@ Object {
     "state": "Florida",
     "zip": "34643",
   },
-  "149772497": Object {
+  "149772497": {
     "bank_name": "Shelby",
     "city": "Shreveport",
     "hash": "f8e4db99a3ef164106449a8dc74825a109811e27",
@@ -18,7 +18,7 @@ Object {
     "state": "Louisiana",
     "zip": "71130",
   },
-  "151532905": Object {
+  "151532905": {
     "bank_name": "Danielle",
     "city": "Midland",
     "hash": "7d6feb1d4035e438595424d801170bf90216cb3e",
@@ -26,7 +26,7 @@ Object {
     "state": "Texas",
     "zip": "78703",
   },
-  "154955464": Object {
+  "154955464": {
     "bank_name": "Marcy",
     "city": "Norfolk",
     "hash": "33a0f99e6af60ec44f619d3f97e5b7b8ecdc54fa",
@@ -34,7 +34,7 @@ Object {
     "state": "Virginia",
     "zip": "23520",
   },
-  "173060444": Object {
+  "173060444": {
     "bank_name": "Valene",
     "city": "Fairbanks",
     "hash": "744d11ac0b61eeab85b094785198e7c528b21683",
@@ -42,7 +42,7 @@ Object {
     "state": "Alaska",
     "zip": "99790",
   },
-  "184481379": Object {
+  "184481379": {
     "bank_name": "Yoko",
     "city": "Washington",
     "hash": "361a2a34babebbbf499b53aeeabf61943e36e08d",
@@ -50,7 +50,7 @@ Object {
     "state": "District of Columbia",
     "zip": "20337",
   },
-  "202463187": Object {
+  "202463187": {
     "bank_name": "Francis",
     "city": "Worcester",
     "hash": "cfe3939c145d1d1e0a4a7df37e4d1251ed72c2ea",
@@ -58,7 +58,7 @@ Object {
     "state": "Massachusetts",
     "zip": "01605",
   },
-  "224887802": Object {
+  "224887802": {
     "bank_name": "Karilynn",
     "city": "Honolulu",
     "hash": "c6e489d5287fa3212125d9bd5fe52e682b2e1c4a",
@@ -66,7 +66,7 @@ Object {
     "state": "Hawaii",
     "zip": "96850",
   },
-  "228880440": Object {
+  "228880440": {
     "bank_name": "Walsh",
     "city": "Oklahoma City",
     "hash": "848a4c9faed2572d3f6f0f23d01c723b0e3bda9d",
@@ -74,7 +74,7 @@ Object {
     "state": "Oklahoma",
     "zip": "73135",
   },
-  "270117236": Object {
+  "270117236": {
     "bank_name": "Harmony",
     "city": "Charlotte",
     "hash": "f197b502645092984c0b9ff62a719b06ae8b1b65",
@@ -82,7 +82,7 @@ Object {
     "state": "North Carolina",
     "zip": "28210",
   },
-  "279027748": Object {
+  "279027748": {
     "bank_name": "Kirsteni",
     "city": "Seattle",
     "hash": "89d4e1eb9711d3de3f06e3a93cbf23168076e609",
@@ -90,7 +90,7 @@ Object {
     "state": "Washington",
     "zip": "98104",
   },
-  "288115184": Object {
+  "288115184": {
     "bank_name": "Griffin",
     "city": "Sacramento",
     "hash": "7196a828aacd8406ae19ef60b01c36db52c1fb7b",
@@ -98,7 +98,7 @@ Object {
     "state": "California",
     "zip": "94297",
   },
-  "304952129": Object {
+  "304952129": {
     "bank_name": "Mannie",
     "city": "New York City",
     "hash": "2704228e27d4bac641483b24e4542069ad6e5feb",
@@ -106,7 +106,7 @@ Object {
     "state": "New York",
     "zip": "10184",
   },
-  "310231910": Object {
+  "310231910": {
     "bank_name": "Kylila",
     "city": "Birmingham",
     "hash": "82352b90bbd14a8aee4dd9766bbb646ccedc071c",
@@ -114,7 +114,7 @@ Object {
     "state": "Alabama",
     "zip": "35295",
   },
-  "312666186": Object {
+  "312666186": {
     "bank_name": "Marlane",
     "city": "Peoria",
     "hash": "57b3590027cba0c5fecea02552e0e52a61a140d8",
@@ -122,7 +122,7 @@ Object {
     "state": "Illinois",
     "zip": "61651",
   },
-  "316489490": Object {
+  "316489490": {
     "bank_name": "Tait",
     "city": "Saint Louis",
     "hash": "e37f810ab769fabae9a2036d0f9e6d108408fcde",
@@ -130,7 +130,7 @@ Object {
     "state": "Missouri",
     "zip": "63126",
   },
-  "331421157": Object {
+  "331421157": {
     "bank_name": "Ward",
     "city": "Chicago",
     "hash": "53df8535394114f1357fdf2bb96007e6165138cd",
@@ -138,7 +138,7 @@ Object {
     "state": "Illinois",
     "zip": "61656",
   },
-  "407981014": Object {
+  "407981014": {
     "bank_name": "Eunice",
     "city": "Lansing",
     "hash": "5faecb4b020d67995a0c461aa44ca3204b575a08",
@@ -146,7 +146,7 @@ Object {
     "state": "Michigan",
     "zip": "48930",
   },
-  "423427452": Object {
+  "423427452": {
     "bank_name": "Delmer",
     "city": "Denver",
     "hash": "f8a7018b475e2318b7f2b9f720e433d58dea0c9e",
@@ -154,7 +154,7 @@ Object {
     "state": "Colorado",
     "zip": "80270",
   },
-  "426945562": Object {
+  "426945562": {
     "bank_name": "Court",
     "city": "Washington",
     "hash": "3c418187f9a03278805558f6aa44202f41805f61",
@@ -162,7 +162,7 @@ Object {
     "state": "District of Columbia",
     "zip": "20503",
   },
-  "473229698": Object {
+  "473229698": {
     "bank_name": "Parker",
     "city": "Jackson",
     "hash": "f1780a07d2ebe521a2fa35743143204c3a7b0e0c",
@@ -170,7 +170,7 @@ Object {
     "state": "Mississippi",
     "zip": "39282",
   },
-  "498873111": Object {
+  "498873111": {
     "bank_name": "Erin",
     "city": "Denver",
     "hash": "e35978f66d38612ea9242413f2168fa3532628e2",
@@ -178,7 +178,7 @@ Object {
     "state": "Colorado",
     "zip": "80209",
   },
-  "514038385": Object {
+  "514038385": {
     "bank_name": "Cherlyn",
     "city": "North Little Rock",
     "hash": "dd5521c8b3db93bb403dcd99e5c7326be9c72232",
@@ -186,7 +186,7 @@ Object {
     "state": "Arkansas",
     "zip": "72118",
   },
-  "527362918": Object {
+  "527362918": {
     "bank_name": "Bili",
     "city": "Saint Paul",
     "hash": "f1cca9a5455ca87fcecaa0130f9aefc507e1134b",
@@ -194,7 +194,7 @@ Object {
     "state": "Minnesota",
     "zip": "55146",
   },
-  "530484329": Object {
+  "530484329": {
     "bank_name": "Janifer",
     "city": "Lubbock",
     "hash": "e8a788d335a7d5533ce630a11b4fcc47f0ba73ae",
@@ -202,7 +202,7 @@ Object {
     "state": "Texas",
     "zip": "79491",
   },
-  "535335163": Object {
+  "535335163": {
     "bank_name": "Melba",
     "city": "Clearwater",
     "hash": "59d345cbaca6043b5becce9bed5a15366530b670",
@@ -210,7 +210,7 @@ Object {
     "state": "Florida",
     "zip": "33758",
   },
-  "547444708": Object {
+  "547444708": {
     "bank_name": "Dorelia",
     "city": "Memphis",
     "hash": "c1a23a7664fd7df7be6c2cd95b2814ee2d770b4f",
@@ -218,7 +218,7 @@ Object {
     "state": "Tennessee",
     "zip": "38131",
   },
-  "588297101": Object {
+  "588297101": {
     "bank_name": "Kizzie",
     "city": "Austin",
     "hash": "ddf6fce86af1e62b224a140adf82ff527e68885a",
@@ -226,7 +226,7 @@ Object {
     "state": "Texas",
     "zip": "78732",
   },
-  "593655726": Object {
+  "593655726": {
     "bank_name": "Samson",
     "city": "Jamaica",
     "hash": "a7ad8804f3aec5c7de374234fa0ea1588a7771bd",
@@ -234,7 +234,7 @@ Object {
     "state": "New York",
     "zip": "11436",
   },
-  "617706482": Object {
+  "617706482": {
     "bank_name": "Carolin",
     "city": "Saint Paul",
     "hash": "5cdb49cf6df13b5f670e925b38d0075e944b2ebd",
@@ -242,7 +242,7 @@ Object {
     "state": "Minnesota",
     "zip": "55103",
   },
-  "675519439": Object {
+  "675519439": {
     "bank_name": "Rosita",
     "city": "Albany",
     "hash": "7e627fda741c35c8fa73bf71b752250241668cab",
@@ -250,7 +250,7 @@ Object {
     "state": "New York",
     "zip": "12237",
   },
-  "692682035": Object {
+  "692682035": {
     "bank_name": "Viv",
     "city": "Albuquerque",
     "hash": "796160c1f70f4521ec49e75e9e33839fc50def34",
@@ -258,7 +258,7 @@ Object {
     "state": "New Mexico",
     "zip": "87180",
   },
-  "701886244": Object {
+  "701886244": {
     "bank_name": "Gwenni",
     "city": "Wichita",
     "hash": "ee9f508458c3cf38ce2331bd286242eece62636f",
@@ -266,7 +266,7 @@ Object {
     "state": "Kansas",
     "zip": "67215",
   },
-  "707249543": Object {
+  "707249543": {
     "bank_name": "Dollie",
     "city": "San Antonio",
     "hash": "baa03cb867f0b2cb82d381546afe9c2ecc923b5e",
@@ -274,7 +274,7 @@ Object {
     "state": "Texas",
     "zip": "78291",
   },
-  "713767044": Object {
+  "713767044": {
     "bank_name": "Dehlia",
     "city": "Lansing",
     "hash": "17f8662b80154faccff41d37a9abae20682fc8ba",
@@ -282,7 +282,7 @@ Object {
     "state": "Michigan",
     "zip": "48901",
   },
-  "732919062": Object {
+  "732919062": {
     "bank_name": "Merle",
     "city": "Denver",
     "hash": "654530b756bba4e8b58e21eaf681a4324c12cbd2",
@@ -290,7 +290,7 @@ Object {
     "state": "Colorado",
     "zip": "80930",
   },
-  "747464677": Object {
+  "747464677": {
     "bank_name": "Petronella",
     "city": "Omaha",
     "hash": "9b5a88d62d0e47c59844728dd5acff4573378cfa",
@@ -298,7 +298,7 @@ Object {
     "state": "Nebraska",
     "zip": "68134",
   },
-  "760086826": Object {
+  "760086826": {
     "bank_name": "Jaime",
     "city": "Indianapolis",
     "hash": "d2eaee6d2eb249c6681aaf2692debbf399834a41",
@@ -306,7 +306,7 @@ Object {
     "state": "Indiana",
     "zip": "46295",
   },
-  "811244802": Object {
+  "811244802": {
     "bank_name": "Trula",
     "city": "Bozeman",
     "hash": "24c31fc647c8e01f7263d6e2744cee984feebfce",
@@ -314,7 +314,7 @@ Object {
     "state": "Montana",
     "zip": "59771",
   },
-  "842286875": Object {
+  "842286875": {
     "bank_name": "Lilly",
     "city": "Kissimmee",
     "hash": "7073b8451f0817f726d8d1c69150152657a14fa2",
@@ -322,7 +322,7 @@ Object {
     "state": "Florida",
     "zip": "34745",
   },
-  "859971484": Object {
+  "859971484": {
     "bank_name": "Bernardo",
     "city": "Richmond",
     "hash": "84efd33b03c5bc3d43e349cc87100db1e8a2b289",
@@ -330,7 +330,7 @@ Object {
     "state": "Virginia",
     "zip": "23293",
   },
-  "916490031": Object {
+  "916490031": {
     "bank_name": "Sandor",
     "city": "New Orleans",
     "hash": "c2a893208034a4b79329dfc100facd94a7e2e20c",
@@ -338,7 +338,7 @@ Object {
     "state": "Louisiana",
     "zip": "70183",
   },
-  "920233367": Object {
+  "920233367": {
     "bank_name": "Jolynn",
     "city": "Houston",
     "hash": "ea5b9a085044b2b329edb622ccf0242d5d304986",
@@ -346,7 +346,7 @@ Object {
     "state": "Texas",
     "zip": "77010",
   },
-  "936501142": Object {
+  "936501142": {
     "bank_name": "Avery",
     "city": "Tulsa",
     "hash": "7d72e69f422402bd8291a734e9281be793769318",
@@ -354,7 +354,7 @@ Object {
     "state": "Oklahoma",
     "zip": "74126",
   },
-  "937516362": Object {
+  "937516362": {
     "bank_name": "Pen",
     "city": "Los Angeles",
     "hash": "19b7ed5609c090a684602a0841de68ca00fd4286",
@@ -366,8 +366,8 @@ Object {
 `;
 
 exports[`compareByKey unit tests Hash map creation test Should correctly map the files 2`] = `
-Object {
-  "149772497": Object {
+{
+  "149772497": {
     "bank_name": "Shelby",
     "city": "Shreveport",
     "hash": "f8e4db99a3ef164106449a8dc74825a109811e27",
@@ -375,7 +375,7 @@ Object {
     "state": "Louisiana",
     "zip": "71130",
   },
-  "151532905": Object {
+  "151532905": {
     "bank_name": "Danielle",
     "city": "Austin",
     "hash": "6ea518090cb4f4975f9e9e4597cdbf61a91d55cb",
@@ -383,7 +383,7 @@ Object {
     "state": "Texas",
     "zip": "78703",
   },
-  "154955464": Object {
+  "154955464": {
     "bank_name": "Marcy",
     "city": "Norfolk",
     "hash": "33a0f99e6af60ec44f619d3f97e5b7b8ecdc54fa",
@@ -391,7 +391,7 @@ Object {
     "state": "Virginia",
     "zip": "23520",
   },
-  "173060444": Object {
+  "173060444": {
     "bank_name": "Valene",
     "city": "Fairbanks",
     "hash": "744d11ac0b61eeab85b094785198e7c528b21683",
@@ -399,7 +399,7 @@ Object {
     "state": "Alaska",
     "zip": "99790",
   },
-  "184481379": Object {
+  "184481379": {
     "bank_name": "Yoko",
     "city": "Washington",
     "hash": "361a2a34babebbbf499b53aeeabf61943e36e08d",
@@ -407,7 +407,7 @@ Object {
     "state": "District of Columbia",
     "zip": "20337",
   },
-  "202463187": Object {
+  "202463187": {
     "bank_name": "Francis",
     "city": "Worcester",
     "hash": "cfe3939c145d1d1e0a4a7df37e4d1251ed72c2ea",
@@ -415,7 +415,7 @@ Object {
     "state": "Massachusetts",
     "zip": "01605",
   },
-  "224887802": Object {
+  "224887802": {
     "bank_name": "Karilynn",
     "city": "Honolulu",
     "hash": "c6e489d5287fa3212125d9bd5fe52e682b2e1c4a",
@@ -423,7 +423,7 @@ Object {
     "state": "Hawaii",
     "zip": "96850",
   },
-  "228880440": Object {
+  "228880440": {
     "bank_name": "Walsh",
     "city": "Oklahoma City",
     "hash": "848a4c9faed2572d3f6f0f23d01c723b0e3bda9d",
@@ -431,7 +431,7 @@ Object {
     "state": "Oklahoma",
     "zip": "73135",
   },
-  "270117236": Object {
+  "270117236": {
     "bank_name": "Harmony",
     "city": "Charlotte",
     "hash": "f197b502645092984c0b9ff62a719b06ae8b1b65",
@@ -439,7 +439,7 @@ Object {
     "state": "North Carolina",
     "zip": "28210",
   },
-  "279027748": Object {
+  "279027748": {
     "bank_name": "Kirsteni",
     "city": "Seattle",
     "hash": "89d4e1eb9711d3de3f06e3a93cbf23168076e609",
@@ -447,7 +447,7 @@ Object {
     "state": "Washington",
     "zip": "98104",
   },
-  "288115184": Object {
+  "288115184": {
     "bank_name": "Griffin",
     "city": "Sacramento",
     "hash": "7196a828aacd8406ae19ef60b01c36db52c1fb7b",
@@ -455,7 +455,7 @@ Object {
     "state": "California",
     "zip": "94297",
   },
-  "304952129": Object {
+  "304952129": {
     "bank_name": "Mannie",
     "city": "New York City",
     "hash": "2704228e27d4bac641483b24e4542069ad6e5feb",
@@ -463,7 +463,7 @@ Object {
     "state": "New York",
     "zip": "10184",
   },
-  "310231910": Object {
+  "310231910": {
     "bank_name": "Kylila",
     "city": "Birmingham",
     "hash": "82352b90bbd14a8aee4dd9766bbb646ccedc071c",
@@ -471,7 +471,7 @@ Object {
     "state": "Alabama",
     "zip": "35295",
   },
-  "312666186": Object {
+  "312666186": {
     "bank_name": "Marlane",
     "city": "Peoria",
     "hash": "57b3590027cba0c5fecea02552e0e52a61a140d8",
@@ -479,7 +479,7 @@ Object {
     "state": "Illinois",
     "zip": "61651",
   },
-  "316489490": Object {
+  "316489490": {
     "bank_name": "Tait",
     "city": "Saint Louis",
     "hash": "e37f810ab769fabae9a2036d0f9e6d108408fcde",
@@ -487,7 +487,7 @@ Object {
     "state": "Missouri",
     "zip": "63126",
   },
-  "331421157": Object {
+  "331421157": {
     "bank_name": "Ward",
     "city": "Peoria",
     "hash": "c74a57da0f0654d51bca8245127ab55227ea277f",
@@ -495,7 +495,7 @@ Object {
     "state": "Illinois",
     "zip": "61656",
   },
-  "366140410": Object {
+  "366140410": {
     "bank_name": "Rocky",
     "city": "Los Angeles",
     "hash": "80e4c2c0dee34269610a0df0374829ba6cf54cb9",
@@ -503,7 +503,7 @@ Object {
     "state": "California",
     "zip": "90005",
   },
-  "407981014": Object {
+  "407981014": {
     "bank_name": "Eunice",
     "city": "Lansing",
     "hash": "5faecb4b020d67995a0c461aa44ca3204b575a08",
@@ -511,7 +511,7 @@ Object {
     "state": "Michigan",
     "zip": "48930",
   },
-  "423427452": Object {
+  "423427452": {
     "bank_name": "Delmer",
     "city": "Denver",
     "hash": "f8a7018b475e2318b7f2b9f720e433d58dea0c9e",
@@ -519,7 +519,7 @@ Object {
     "state": "Colorado",
     "zip": "80270",
   },
-  "426945562": Object {
+  "426945562": {
     "bank_name": "Court",
     "city": "Washington",
     "hash": "3c418187f9a03278805558f6aa44202f41805f61",
@@ -527,7 +527,7 @@ Object {
     "state": "District of Columbia",
     "zip": "20503",
   },
-  "473229698": Object {
+  "473229698": {
     "bank_name": "Parker",
     "city": "Jackson",
     "hash": "f1780a07d2ebe521a2fa35743143204c3a7b0e0c",
@@ -535,7 +535,7 @@ Object {
     "state": "Mississippi",
     "zip": "39282",
   },
-  "498873111": Object {
+  "498873111": {
     "bank_name": "Erin",
     "city": "Denver",
     "hash": "e35978f66d38612ea9242413f2168fa3532628e2",
@@ -543,7 +543,7 @@ Object {
     "state": "Colorado",
     "zip": "80209",
   },
-  "514038385": Object {
+  "514038385": {
     "bank_name": "Cherlyn",
     "city": "North Little Rock",
     "hash": "dd5521c8b3db93bb403dcd99e5c7326be9c72232",
@@ -551,7 +551,7 @@ Object {
     "state": "Arkansas",
     "zip": "72118",
   },
-  "527362918": Object {
+  "527362918": {
     "bank_name": "Bili",
     "city": "Saint Paul",
     "hash": "f1cca9a5455ca87fcecaa0130f9aefc507e1134b",
@@ -559,7 +559,7 @@ Object {
     "state": "Minnesota",
     "zip": "55146",
   },
-  "530484329": Object {
+  "530484329": {
     "bank_name": "Janifer",
     "city": "Lubbock",
     "hash": "e8a788d335a7d5533ce630a11b4fcc47f0ba73ae",
@@ -567,7 +567,7 @@ Object {
     "state": "Texas",
     "zip": "79491",
   },
-  "535335163": Object {
+  "535335163": {
     "bank_name": "Melba",
     "city": "Clearwater",
     "hash": "59d345cbaca6043b5becce9bed5a15366530b670",
@@ -575,7 +575,7 @@ Object {
     "state": "Florida",
     "zip": "33758",
   },
-  "588297101": Object {
+  "588297101": {
     "bank_name": "Kizzie",
     "city": "Austin",
     "hash": "ddf6fce86af1e62b224a140adf82ff527e68885a",
@@ -583,7 +583,7 @@ Object {
     "state": "Texas",
     "zip": "78732",
   },
-  "593655726": Object {
+  "593655726": {
     "bank_name": "Samson",
     "city": "Jamaica",
     "hash": "a7ad8804f3aec5c7de374234fa0ea1588a7771bd",
@@ -591,7 +591,7 @@ Object {
     "state": "New York",
     "zip": "11436",
   },
-  "617706482": Object {
+  "617706482": {
     "bank_name": "Carolin",
     "city": "Saint Paul",
     "hash": "5cdb49cf6df13b5f670e925b38d0075e944b2ebd",
@@ -599,7 +599,7 @@ Object {
     "state": "Minnesota",
     "zip": "55103",
   },
-  "641717493": Object {
+  "641717493": {
     "bank_name": "Stevie",
     "city": "Lincoln",
     "hash": "25babf4e8789065fae007ac9232dfbf79b0d2366",
@@ -607,7 +607,7 @@ Object {
     "state": "Nebraska",
     "zip": "68583",
   },
-  "675519439": Object {
+  "675519439": {
     "bank_name": "Rosita",
     "city": "Albany",
     "hash": "7e627fda741c35c8fa73bf71b752250241668cab",
@@ -615,7 +615,7 @@ Object {
     "state": "New York",
     "zip": "12237",
   },
-  "692682035": Object {
+  "692682035": {
     "bank_name": "Viv",
     "city": "Albuquerque",
     "hash": "796160c1f70f4521ec49e75e9e33839fc50def34",
@@ -623,7 +623,7 @@ Object {
     "state": "New Mexico",
     "zip": "87180",
   },
-  "707249543": Object {
+  "707249543": {
     "bank_name": "Dollie",
     "city": "San Antonio",
     "hash": "baa03cb867f0b2cb82d381546afe9c2ecc923b5e",
@@ -631,7 +631,7 @@ Object {
     "state": "Texas",
     "zip": "78291",
   },
-  "713767044": Object {
+  "713767044": {
     "bank_name": "Dehlia",
     "city": "Lansing",
     "hash": "17f8662b80154faccff41d37a9abae20682fc8ba",
@@ -639,7 +639,7 @@ Object {
     "state": "Michigan",
     "zip": "48901",
   },
-  "732919062": Object {
+  "732919062": {
     "bank_name": "Merle",
     "city": "Colorado Springs",
     "hash": "ab0146b04c0c105abebacc855a462e254009b2e2",
@@ -647,7 +647,7 @@ Object {
     "state": "Colorado",
     "zip": "80930",
   },
-  "747464677": Object {
+  "747464677": {
     "bank_name": "Petronella",
     "city": "Omaha",
     "hash": "9b5a88d62d0e47c59844728dd5acff4573378cfa",
@@ -655,7 +655,7 @@ Object {
     "state": "Nebraska",
     "zip": "68134",
   },
-  "807061088": Object {
+  "807061088": {
     "bank_name": "Sharia",
     "city": "Abilene",
     "hash": "f010acef1baffc60e22d2d7791f4ffd050ccd2f7",
@@ -663,7 +663,7 @@ Object {
     "state": "Texas",
     "zip": "79605",
   },
-  "811244802": Object {
+  "811244802": {
     "bank_name": "Trula",
     "city": "Bozeman",
     "hash": "24c31fc647c8e01f7263d6e2744cee984feebfce",
@@ -671,7 +671,7 @@ Object {
     "state": "Montana",
     "zip": "59771",
   },
-  "812862008": Object {
+  "812862008": {
     "bank_name": "Alicia",
     "city": "Springfield",
     "hash": "178236efa52f5491f8fd4f6c64d9ecf1afc1b700",
@@ -679,7 +679,7 @@ Object {
     "state": "Missouri",
     "zip": "65810",
   },
-  "836255617": Object {
+  "836255617": {
     "bank_name": "Andres",
     "city": "Flushing",
     "hash": "01935e3083c212323c3c929d81838b9c66582fbe",
@@ -687,7 +687,7 @@ Object {
     "state": "New York",
     "zip": "11388",
   },
-  "842286875": Object {
+  "842286875": {
     "bank_name": "Lilly",
     "city": "Kissimmee",
     "hash": "7073b8451f0817f726d8d1c69150152657a14fa2",
@@ -695,7 +695,7 @@ Object {
     "state": "Florida",
     "zip": "34745",
   },
-  "859971484": Object {
+  "859971484": {
     "bank_name": "Bernardo",
     "city": "Richmond",
     "hash": "84efd33b03c5bc3d43e349cc87100db1e8a2b289",
@@ -703,7 +703,7 @@ Object {
     "state": "Virginia",
     "zip": "23293",
   },
-  "916490031": Object {
+  "916490031": {
     "bank_name": "Sandor",
     "city": "New Orleans",
     "hash": "c2a893208034a4b79329dfc100facd94a7e2e20c",
@@ -711,7 +711,7 @@ Object {
     "state": "Louisiana",
     "zip": "70183",
   },
-  "936501142": Object {
+  "936501142": {
     "bank_name": "Avery",
     "city": "Tulsa",
     "hash": "7d72e69f422402bd8291a734e9281be793769318",
@@ -719,7 +719,7 @@ Object {
     "state": "Oklahoma",
     "zip": "74126",
   },
-  "937516362": Object {
+  "937516362": {
     "bank_name": "Pen",
     "city": "Los Angeles",
     "hash": "19b7ed5609c090a684602a0841de68ca00fd4286",
@@ -731,28 +731,28 @@ Object {
 `;
 
 exports[`compareByKey unit tests Hash map creation test Should ensure we are protected from a duplicate key 1`] = `
-Object {
+{
   "message": "Key is not unique ",
 }
 `;
 
 exports[`compareByKey unit tests Hash map creation test Should ensure we are protected from an undefined key 1`] = `
-Object {
+{
   "message": "You cannot have an undefined key name",
 }
 `;
 
 exports[`compareByKey unit tests Hash map creation test Should give me a list of changed data in file 1`] = `
-Array [
-  Object {
-    "newData": Object {
+[
+  {
+    "newData": {
       "bank_name": "Danielle",
       "city": "Austin",
       "routing_number": 151532905,
       "state": "Texas",
       "zip": "78703",
     },
-    "oldData": Object {
+    "oldData": {
       "bank_name": "Danielle",
       "city": "Midland",
       "routing_number": 151532905,
@@ -760,15 +760,15 @@ Array [
       "zip": "78703",
     },
   },
-  Object {
-    "newData": Object {
+  {
+    "newData": {
       "bank_name": "Ward",
       "city": "Peoria",
       "routing_number": 331421157,
       "state": "Illinois",
       "zip": "61656",
     },
-    "oldData": Object {
+    "oldData": {
       "bank_name": "Ward",
       "city": "Chicago",
       "routing_number": 331421157,
@@ -776,15 +776,15 @@ Array [
       "zip": "61656",
     },
   },
-  Object {
-    "newData": Object {
+  {
+    "newData": {
       "bank_name": "Merle",
       "city": "Colorado Springs",
       "routing_number": 732919062,
       "state": "Colorado",
       "zip": "80930",
     },
-    "oldData": Object {
+    "oldData": {
       "bank_name": "Merle",
       "city": "Denver",
       "routing_number": 732919062,
@@ -796,36 +796,36 @@ Array [
 `;
 
 exports[`compareByKey unit tests Hash map creation test Should give me a list of data no longer in file 1`] = `
-Array [
-  Object {
+[
+  {
     "bank_name": "Phillipe",
     "city": "Largo",
     "routing_number": 145543598,
     "state": "Florida",
     "zip": "34643",
   },
-  Object {
+  {
     "bank_name": "Dorelia",
     "city": "Memphis",
     "routing_number": 547444708,
     "state": "Tennessee",
     "zip": "38131",
   },
-  Object {
+  {
     "bank_name": "Gwenni",
     "city": "Wichita",
     "routing_number": 701886244,
     "state": "Kansas",
     "zip": "67215",
   },
-  Object {
+  {
     "bank_name": "Jaime",
     "city": "Indianapolis",
     "routing_number": 760086826,
     "state": "Indiana",
     "zip": "46295",
   },
-  Object {
+  {
     "bank_name": "Jolynn",
     "city": "Houston",
     "routing_number": 920233367,
@@ -836,36 +836,36 @@ Array [
 `;
 
 exports[`compareByKey unit tests Hash map creation test Should give me a list of new data in file 1`] = `
-Array [
-  Object {
+[
+  {
     "bank_name": "Rocky",
     "city": "Los Angeles",
     "routing_number": 366140410,
     "state": "California",
     "zip": "90005",
   },
-  Object {
+  {
     "bank_name": "Stevie",
     "city": "Lincoln",
     "routing_number": 641717493,
     "state": "Nebraska",
     "zip": "68583",
   },
-  Object {
+  {
     "bank_name": "Sharia",
     "city": "Abilene",
     "routing_number": 807061088,
     "state": "Texas",
     "zip": "79605",
   },
-  Object {
+  {
     "bank_name": "Alicia",
     "city": "Springfield",
     "routing_number": 812862008,
     "state": "Missouri",
     "zip": "65810",
   },
-  Object {
+  {
     "bank_name": "Andres",
     "city": "Flushing",
     "routing_number": 836255617,

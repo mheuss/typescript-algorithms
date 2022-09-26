@@ -1,5 +1,5 @@
-import { ComparisonFunction } from '../../comparisons/constants';
-import { MinDAryHeap } from '../min-d-ary-heap';
+import { ComparisonFunction } from "../../comparisons/constants";
+import { MinDAryHeap } from "../min-d-ary-heap";
 
 /**
  * Implementation of a min binary heap.

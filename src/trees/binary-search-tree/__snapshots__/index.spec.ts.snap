@@ -2,22 +2,22 @@
 
 exports[`Binary Search Tree Unit tests Numeric Tests Insert Tests Snapshot 1`] = `
 Node {
-  "children": Array [
+  "children": [
     Node {
-      "children": Array [],
+      "children": [],
       "parent": [Circular],
       "value": 2,
     },
     Node {
-      "children": Array [
-        undefined,
+      "children": [
+        ,
         Node {
-          "children": Array [
-            undefined,
+          "children": [
+            ,
             Node {
-              "children": Array [
+              "children": [
                 Node {
-                  "children": Array [],
+                  "children": [],
                   "parent": [Circular],
                   "value": 17,
                 },
@@ -43,22 +43,22 @@ exports[`Binary Search Tree Unit tests Test with Objects Should fail a find when
 
 exports[`Binary Search Tree Unit tests Test with strings Insert Tests Snapshot 1`] = `
 Node {
-  "children": Array [
+  "children": [
     Node {
-      "children": Array [],
+      "children": [],
       "parent": [Circular],
       "value": "Bravo",
     },
     Node {
-      "children": Array [
-        undefined,
+      "children": [
+        ,
         Node {
-          "children": Array [
-            undefined,
+          "children": [
+            ,
             Node {
-              "children": Array [
+              "children": [
                 Node {
-                  "children": Array [],
+                  "children": [],
                   "parent": [Circular],
                   "value": "Papa",
                 },

@@ -1,11 +1,12 @@
-import { cloneDeep } from 'lodash';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { cloneDeep } from "lodash";
 
-import threeWayObjectMerge, { diffDeep } from './index';
+import threeWayObjectMerge, { diffDeep } from "./index";
 
-const comedian = 'Anthony Jeselnik';
+const comedian = "Anthony Jeselnik";
 
 describe("Let's give 'em three objects, and return the results", () => {
-  it('Simple proof that the three-way object merge works', () => {
+  it("Simple proof that the three-way object merge works", () => {
     const initialObject = {
       a: 1,
       b: 2,
@@ -33,7 +34,7 @@ describe("Let's give 'em three objects, and return the results", () => {
     expect(results).toEqual({ a: 1, b: 3, c: 4 });
   });
 
-  it('Slightly more complex proof that the three-way object merge works', () => {
+  it("Slightly more complex proof that the three-way object merge works", () => {
     const initialObject = {
       a: 1,
       b: 2,
@@ -64,7 +65,7 @@ describe("Let's give 'em three objects, and return the results", () => {
     expect(results).toEqual({ a: 1, b: 3, c: 4, d: 4 });
   });
 
-  it('Should merge changes into our final object, if the fresh object has no changes', () => {
+  it("Should merge changes into our final object, if the fresh object has no changes", () => {
     const jokes = [
       `I’ve spent the past two years looking for my ex-girlfriend’s killer… but no one will do it.`,
       "I've got a kid in Africa that I feed, that I clothe, that I school, that I inoculate for 75 cents a day. Which is practically nothing compared to what it cost to send him there.",
@@ -112,10 +113,10 @@ describe("Let's give 'em three objects, and return the results", () => {
     expect(results).toEqual(changes);
   });
 
-  it('Should merge changes into our final object, if the fresh object has changes', () => {
+  it("Should merge changes into our final object, if the fresh object has changes", () => {
     const jokes = [
       `Broke up with my last girlfriend because she lied to me and told me she got molested by her neighbor. But I know her neighbor. He’s a really cool guy. Not like her creepy ass other neighbor.`,
-      'I plan on talking to my kids about sex early. Like six. Or seven am.',
+      "I plan on talking to my kids about sex early. Like six. Or seven am.",
       `You'll get my assault weapon when you pry it out of my curious six-year-old's cold dead hands.`,
     ];
 
@@ -177,8 +178,8 @@ describe("Let's give 'em three objects, and return the results", () => {
   });
 });
 
-describe('Can we diff two objects?', () => {
-  it('Should find diffs on a base object', () => {
+describe("Can we diff two objects?", () => {
+  it("Should find diffs on a base object", () => {
     const source: any = {
       jeselnikQuote: `My girlfriend loves to eat chocolate. She’s always eating chocolate, and she likes to joke she’s got a chocolate addiction. "Get me away from those Hersheys bars. I’m addicted to them." It’s really annoying. So I put her in a car and I drove her downtown. And I pointed out a crack addict. And I said, "Do you see that, honey?... Why can’t you be that skinny?"`,
       number: 5,
@@ -192,10 +193,10 @@ describe('Can we diff two objects?', () => {
     expect(results).toEqual({ number: 35 });
   });
 
-  it('Should find diffs on a nested object', () => {
+  it("Should find diffs on a nested object", () => {
     const source: any = {
       jokes: {
-        comedian: 'Anthony Jeselnick',
+        comedian: "Anthony Jeselnick",
         quote: `You don’t know anything about pain until you’ve seen your own baby drowned in a tub... and you definitely don’t know anything about how to wash a baby.`,
       },
       number: 5,
@@ -203,13 +204,13 @@ describe('Can we diff two objects?', () => {
     };
 
     const derivation: any = cloneDeep(source);
-    derivation.jokes.comedian = 'Anthony Jeselnik';
+    derivation.jokes.comedian = "Anthony Jeselnik";
 
     const results = diffDeep(source, derivation);
     expect(results).toEqual({ jokes: { comedian } });
   });
 
-  it('Should work fine with an addition to an array', () => {
+  it("Should work fine with an addition to an array", () => {
     const source: any = {
       jokes: [
         {
@@ -225,14 +226,14 @@ describe('Can we diff two objects?', () => {
     derivation.jokes.push({
       comedian,
       quote:
-        'Whenever I meet a pretty girl, the first thing I look for is intelligence; because if she doesn’t have that, then she’s mine.',
+        "Whenever I meet a pretty girl, the first thing I look for is intelligence; because if she doesn’t have that, then she’s mine.",
     });
 
     const results = diffDeep(source, derivation);
     expect(results).toEqual({ jokes: derivation.jokes });
   });
 
-  it('Should work fine with a subtraction from an array', () => {
+  it("Should work fine with a subtraction from an array", () => {
     const source: any = {
       jokes: [
         {
@@ -242,7 +243,7 @@ describe('Can we diff two objects?', () => {
         {
           comedian,
           quote:
-            'Two words no woman should ever have to hear: Triple Mastectomy.',
+            "Two words no woman should ever have to hear: Triple Mastectomy.",
         },
       ],
       number: 5,
@@ -254,7 +255,7 @@ describe('Can we diff two objects?', () => {
       {
         comedian,
         quote:
-          'Two words no woman should ever have to hear: Triple Mastectomy.',
+          "Two words no woman should ever have to hear: Triple Mastectomy.",
       },
     ];
 

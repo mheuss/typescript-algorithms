@@ -1,4 +1,4 @@
-import { Stack } from '../generic';
+import { Stack } from "../generic";
 
 /*
 This is a pair of stacks that can be used to implement an undo/redo storage system.

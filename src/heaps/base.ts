@@ -1,6 +1,6 @@
-import { SelectComparisonFunction } from '../comparisons';
-import { ComparisonFunction, Comparisons } from '../comparisons/constants';
-import { IBaseHeapParameters } from './types';
+import { SelectComparisonFunction } from "../comparisons";
+import { ComparisonFunction, Comparisons } from "../comparisons/constants";
+import { IBaseHeapParameters } from "./types";
 
 /**
  * Base heap constructor, has the functionality that is the basis of all heap types.
@@ -74,7 +74,7 @@ export class BaseHeap<T> {
     this.checkComparisonFunction(this.data);
 
     const returnValue: T = this.data[0];
-    this.data[0] = this.data.pop()!; // Won't be undefined, due to checks above
+    this.data[0] = this.data.pop()!;
 
     this.bubbleDown(0);
     return returnValue;

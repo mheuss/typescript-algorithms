@@ -1,10 +1,10 @@
-import { ErrorCodes } from '../constants';
-import { ListNode } from './single-linked-list/list-node';
+import { ErrorCodes } from "../constants";
+import { ListNode } from "./single-linked-list/list-node";
 import {
   FindTypes,
   IFindType,
   SearchFunction,
-} from './single-linked-list/types';
+} from "./single-linked-list/types";
 
 export class LinkedList<T> {
   protected length: number;
@@ -133,7 +133,7 @@ export class LinkedList<T> {
     if (!node) {
       throw {
         code: ErrorCodes.FAILED_TO_SET,
-        message: 'Failed to set the value at the given node',
+        message: "Failed to set the value at the given node",
       };
     }
     node.payload = value;
@@ -164,7 +164,7 @@ export class LinkedList<T> {
         // Should never happen
         throw {
           code: ErrorCodes.LIST_IS_BROKEN_INTERNALLY,
-          message: 'List appears to be broken',
+          message: "List appears to be broken",
         };
       }
       current = current.next;

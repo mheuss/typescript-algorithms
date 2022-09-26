@@ -1,10 +1,10 @@
-import { ComparisonFunction } from '../comparisons/constants';
-import { numericComparison } from '../comparisons/numbers';
-import { stringComparison } from '../comparisons/strings';
-import { ErrorCodes } from '../constants';
-import { Queue } from '../queues/fifo-queue';
-import { Node } from './binary-search-tree/node';
-import { ITreeObject, Traversal } from './constants';
+import { ComparisonFunction } from "../comparisons/constants";
+import { numericComparison } from "../comparisons/numbers";
+import { stringComparison } from "../comparisons/strings";
+import { ErrorCodes } from "../constants";
+import { Queue } from "../queues/fifo-queue";
+import { Node } from "./binary-search-tree/node";
+import { ITreeObject, Traversal } from "./constants";
 
 interface IGenericTreeParams<T> {
   comparisonFunction?: ComparisonFunction<T>;
@@ -16,23 +16,21 @@ export class GenericTree<T> {
   protected static SelectComparisonFunction<T>(
     incomingValue: T
   ): ComparisonFunction<T> {
-    if (typeof incomingValue === 'string' || incomingValue instanceof String) {
-      // @ts-ignore
-      return stringComparison;
-    } else if (typeof incomingValue === 'number') {
-      // @ts-ignore
-      return numericComparison;
+    if (typeof incomingValue === "string" || incomingValue instanceof String) {
+      return stringComparison as ComparisonFunction<T>;
+    } else if (typeof incomingValue === "number") {
+      return numericComparison as ComparisonFunction<T>;
     } else {
       throw {
         code: ErrorCodes.COMPARISON_FUNCTION_REQUIRED,
         message:
-          'A custom comparison function is needed for arrays of types other than string or numbers',
+          "A custom comparison function is needed for arrays of types other than string or numbers",
       };
     }
   }
 
   protected root: Node<T> | null = null;
-  protected nodeCount: number = 0;
+  protected nodeCount = 0;
   protected comparisonFunction: ComparisonFunction<T> | undefined;
   protected maxNumberOfChildrenPerNode: number | undefined;
 
@@ -81,7 +79,7 @@ export class GenericTree<T> {
     if (!dataFile || !dataFile.value) {
       throw {
         code: ErrorCodes.INVALID_TREE_DATA_FILE,
-        message: 'Invalid structure passed into load',
+        message: "Invalid structure passed into load",
       };
     }
 
@@ -127,7 +125,7 @@ export class GenericTree<T> {
       if (node) {
         operation(node);
 
-        node.children.forEach(child => {
+        node.children.forEach((child) => {
           queue.enqueue(child);
         });
       }
@@ -139,7 +137,7 @@ export class GenericTree<T> {
     operation: (item: Node<T>) => void
   ) => {
     operation(startingNode);
-    startingNode.children.forEach(child => {
+    startingNode.children.forEach((child) => {
       if (child) {
         this.traversalDepthFirstPreOrder(child, operation);
       }
@@ -150,7 +148,7 @@ export class GenericTree<T> {
     startingNode: Node<T>,
     operation: (item: Node<T>) => void
   ) => {
-    startingNode.children.forEach(child => {
+    startingNode.children.forEach((child) => {
       if (child) {
         this.traversalDepthFirstPostOrder(child, operation);
       }
@@ -171,7 +169,7 @@ export class GenericTree<T> {
     startingNode: Node<T>,
     operation: (item: Node<T>) => void
   ) => {
-    startingNode.children.forEach(child => {
+    startingNode.children.forEach((child) => {
       this.inOrderHelper(child, operation);
       operation(child);
     });
@@ -183,7 +181,7 @@ export class GenericTree<T> {
       value: node.value,
     };
 
-    node.children.forEach(item => {
+    node.children.forEach((item) => {
       treeToReturn.children.push(this.createTreeAsObject(item));
     });
 
@@ -196,7 +194,7 @@ export class GenericTree<T> {
   ) => {
     const node = new Node<T>(dataFile.value, parent);
 
-    dataFile.children.forEach(child => {
+    dataFile.children.forEach((child) => {
       node.children.push(this.createLoadedNode(node, child));
       this.nodeCount++;
     });

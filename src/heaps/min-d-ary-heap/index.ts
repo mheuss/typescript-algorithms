@@ -1,6 +1,6 @@
-import { Comparisons } from '../../comparisons/constants';
-import { BaseHeap } from '../base';
-import { IMaxDAryHeapParameters } from '../types';
+import { Comparisons } from "../../comparisons/constants";
+import { BaseHeap } from "../base";
+import { IMaxDAryHeapParameters } from "../types";
 
 /**
  * Implementation of a min heap, with d number of children.

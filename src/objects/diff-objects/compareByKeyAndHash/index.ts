@@ -1,5 +1,5 @@
-import * as hashingFunction from 'object-hash';
-import { IChangeData, ICompareByKeyAndHash, IObjectWithHash } from './type';
+import * as hashingFunction from "object-hash";
+import { IChangeData, ICompareByKeyAndHash, IObjectWithHash } from "./type";
 
 /**
  * When given two arrays of objects, one original, one new, this class will tell you what was added to the original,
@@ -15,7 +15,7 @@ export class CompareByKeyAndHash<T> {
     const keysFromFirst = Object.keys(firstObject);
     const newData: T[] = [];
 
-    keysFromFirst.forEach(property => {
+    keysFromFirst.forEach((property) => {
       if (secondObject[property] === undefined) {
         const objWithoutHash = { ...firstObject[property] };
         delete objWithoutHash.hash;
@@ -52,7 +52,7 @@ export class CompareByKeyAndHash<T> {
     const keysFromNew = Object.keys(this.newObject);
     const changedDataInFile: Array<IChangeData<T>> = [];
 
-    keysFromNew.forEach(property => {
+    keysFromNew.forEach((property) => {
       if (
         this.originalObject[property] !== undefined &&
         this.newObject[property] !== undefined &&
@@ -78,22 +78,22 @@ export class CompareByKeyAndHash<T> {
     keyName: keyof T
   ): ICompareByKeyAndHash<IObjectWithHash> {
     const transformedFile: ICompareByKeyAndHash<IObjectWithHash> = {};
-    const keyAsString = `${keyName}` as keyof T;
+    const keyAsString = `${keyName as string}` as keyof T;
 
-    data.forEach(lineItem => {
+    data.forEach((lineItem) => {
       if (lineItem[keyAsString] === undefined) {
-        throw { message: 'You cannot have an undefined key name' };
+        throw { message: "You cannot have an undefined key name" };
       }
 
       if (transformedFile[`${lineItem[keyAsString]}`] !== undefined) {
         throw { message: `Key is not unique ` };
       }
 
-      const calculatedHash = hashingFunction(lineItem);
-      transformedFile[`${lineItem[keyAsString]}`] = ({
+      const calculatedHash = hashingFunction(lineItem as never);
+      transformedFile[`${lineItem[keyAsString]}`] = {
         ...lineItem,
         hash: calculatedHash,
-      } as unknown) as IObjectWithHash;
+      } as unknown as IObjectWithHash;
     });
 
     return transformedFile;

@@ -1,4 +1,4 @@
-import { SingleLinkedList } from '../../linked-lists/single-linked-list';
+import { SingleLinkedList } from "../../linked-lists/single-linked-list";
 
 /**
  * Implementation of a FIFO queue. Has a generic that is used to pass in the type of the payload.

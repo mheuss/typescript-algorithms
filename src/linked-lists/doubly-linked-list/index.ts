@@ -1,7 +1,7 @@
-import { ErrorCodes } from '../../constants';
-import { LinkedList } from '../base';
-import { IFindType, SearchFunction } from '../single-linked-list/types';
-import { DoublyLinkedNode } from './doubly-linked-node';
+import { ErrorCodes } from "../../constants";
+import { LinkedList } from "../base";
+import { IFindType, SearchFunction } from "../single-linked-list/types";
+import { DoublyLinkedNode } from "./doubly-linked-node";
 
 /**
  * Double linked list implementation.
@@ -42,7 +42,7 @@ export class DoublyLinkedList<T> extends LinkedList<T> {
    * @returns The current SingleLinkedList instance
    */
   public pushArray = (newItem: T[]) => {
-    newItem.forEach(item => {
+    newItem.forEach((item) => {
       this.push(item);
     });
 
@@ -164,7 +164,7 @@ export class DoublyLinkedList<T> extends LinkedList<T> {
     if (!preObject) {
       throw {
         code: ErrorCodes.OPERATION_BEYOND_BOUNDS,
-        message: 'Operation beyond bounds',
+        message: "Operation beyond bounds",
       };
     }
 
@@ -197,11 +197,11 @@ export class DoublyLinkedList<T> extends LinkedList<T> {
     if (index < 0 || index >= this.length) {
       throw {
         code: ErrorCodes.OPERATION_BEYOND_BOUNDS,
-        message: 'Index is out of bounds',
+        message: "Index is out of bounds",
       };
     }
 
-    const pre = this.getNode(index - 1) as DoublyLinkedNode<any>;
+    const pre = this.getNode(index - 1) as DoublyLinkedNode<never>;
 
     if (pre === null) {
       return this.shift();
@@ -212,7 +212,7 @@ export class DoublyLinkedList<T> extends LinkedList<T> {
     if (node === null) {
       throw {
         code: ErrorCodes.OPERATION_BEYOND_BOUNDS,
-        message: 'Index is out of bounds',
+        message: "Index is out of bounds",
       };
     }
 
@@ -281,7 +281,7 @@ export class DoublyLinkedList<T> extends LinkedList<T> {
         // Should never happen
         throw {
           code: ErrorCodes.LIST_IS_BROKEN_INTERNALLY,
-          message: 'List appears to be broken',
+          message: "List appears to be broken",
         };
       }
       current = current.previous;
