@@ -16,6 +16,7 @@ Included here are:
   - Divide Array Into Approximately Equal Sized Arrays
   - Graphs (Undirected Adjacency)
   - Heaps (Min, Max Binary and D*ry)
+  - Multipart form processing for AWS Lambda
   - Linked Lists (Single and Double)
   - Object Diffing 
   - Queues (FIFO, Priority Min & Max)
